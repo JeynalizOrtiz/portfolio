@@ -1,6 +1,8 @@
 # History files
 .Rhistory
 .Rapp.history
+*.Rproj.user/
+.Ruserdata
 
 # Session Data files
 .RData
@@ -51,3 +53,5 @@ rsconnect/
 #DS Store
 .DS_Store
 
+#Thumb
+Thumbs.db
