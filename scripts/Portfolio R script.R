@@ -2,6 +2,7 @@ library(EVR628tools)
 library(ggplot2)
 create_dirs()
 
+#Plot
 milton <- data_milton
 miltonplot<- ggplot(milton, aes(x = lon,
                    y = lat,
@@ -13,7 +14,9 @@ miltonplot<- ggplot(milton, aes(x = lon,
        y = "Latitude") +
   theme_minimal()
 
+#Plot name
 miltonplot
 
 #Save plot as image
-ggsave("Desktop/portfolio/results/img/milton_plot.png", plot = miltonplot)
+ggsave("results/img/milton_plot.png", plot = miltonplot)
+
