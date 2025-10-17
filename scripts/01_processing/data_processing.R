@@ -62,3 +62,7 @@ dis2025 <- dis2025 %>%
     latitude = round(latitude, latmin_decimals),
     longitude = round(longitude, lonmin_decimals))
 
+#Addressing an error in the dataset by manually substituting a value with base
+#R function.
+
+dis2025[139, "latitude"] <- 25.8382267
