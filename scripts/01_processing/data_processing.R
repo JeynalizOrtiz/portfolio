@@ -34,6 +34,11 @@ dis2025 <- dis2025 |>
 
 colnames(dis2025)
 
+#Addressing an error in the dataset by manually substituting a value with base
+#R function.
+
+dis2025[139, "latitude"] <- 25.8382267
+
 #Change the latitude and longitude to a consistent number of decimal points
 #Need to convert to character functon to be able to round
 
