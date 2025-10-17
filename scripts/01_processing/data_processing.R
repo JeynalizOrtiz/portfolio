@@ -67,7 +67,24 @@ dis2025 <- dis2025 %>%
     latitude = round(latitude, latmin_decimals),
     longitude = round(longitude, lonmin_decimals))
 
-#Addressing an error in the dataset by manually substituting a value with base
-#R function.
+# Filter out the NA's in the nest column (That means that these disorientations
+#were not from hatches but from adult nesters, therefore irrelevant to our current question.)
 
-dis2025[139, "latitude"] <- 25.8382267
+dis2025 <- dis2025 |>
+  filter(!is.na(nest))
+
+# Create a new column for sites
+
+dis2025 <- dis2025 %>%
+  mutate(
+    sites = case_when(
+      str_detect(nest, "^KB-N") ~ "key biscayne",
+      str_detect(nest, "^HO-N") ~ "haulover",
+      str_detect(nest, "^FI-N") ~ "fisher island",
+      str_detect(nest, "^MB-N") ~ "miami beach",
+      str_detect(nest, "^GB-N") ~ "golden beach",
+      str_detect(nest, "MNGB") ~ "golden beach",
+      str_detect(nest, "MNMB") ~ "miami beach",
+      str_detect(nest, "MNKB") ~ "key biscayne",
+      str_detect(nest, "C0") ~ "miami beach",
+      TRUE ~ NA_character_))
