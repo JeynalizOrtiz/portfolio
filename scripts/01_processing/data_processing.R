@@ -88,3 +88,13 @@ dis2025 <- dis2025 %>%
       str_detect(nest, "MNKB") ~ "key biscayne",
       str_detect(nest, "C0") ~ "miami beach",
       TRUE ~ NA_character_))
+
+# How many nests disoriented per site?
+#Use n_distinct for unique entries because some prefixes are repeated.
+
+nests_per_site <- dis2025 |>
+  group_by(sites) |>
+  summarize(nests = n_distinct(nest))
+
+nests_per_site
+
