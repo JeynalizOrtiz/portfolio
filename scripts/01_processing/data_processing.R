@@ -98,3 +98,17 @@ nests_per_site <- dis2025 |>
 
 nests_per_site
 
+#Plot nests per site
+
+ggplot(nests_per_site,
+       aes(x = sites,
+           y = nests,
+           fill = nests)) +
+  geom_col() +
+  scale_fill_gradient(low = "lightblue", high = "darkblue") +
+  labs(
+    title = "Disorientation Density by Site",
+    x = "Site",
+    y = "Nests",
+    fill = "Nest Count") +
+  theme_minimal()
