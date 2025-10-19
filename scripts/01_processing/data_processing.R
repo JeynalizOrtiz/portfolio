@@ -6,7 +6,7 @@
 #
 # October 19, 2025
 #
-# Sea turtle disorientations in Miami-Dade County (2025).
+# Data cleanup of sea turtle disorientations in Miami-Dade County (2025).
 #
 ################################################################################
 
@@ -34,30 +34,27 @@ dis2025 <- dis2025 |>
 
 colnames(dis2025)
 
-#Addressing an error in the dataset by manually substituting a value with base
-#R function.
+#Addressing a GPS error in the dataset at the moment of export
+#Manually substituting correct value with base R function.
 
 dis2025[139, "latitude"] <- 25.8382267
 
-#Change the latitude and longitude to a consistent number of decimal points
-#Need to convert to character functon to be able to round
+#Change the latitude and longitude to a consistent number of decimal points.
+#This has been applied because methods include two different GPS systems:
+#Trimble and Google Earth, which both yield differing decimal points.
+#Need to convert to character function to be able to round.
 
 latmin_decimals <- dis2025 |>
   mutate(dec = nchar(sub("^[^.]*\\.?","", as.character(latitude)))) |>
-  summarise(min(dec, na.rm = TRUE)) |>
+  summarize(min(dec, na.rm = TRUE)) |>
   pull()
 
 lonmin_decimals <- dis2025 |>
   mutate(dec = nchar(sub("^[^.]*\\.?","", as.character(longitude)))) |>
-  summarise(min(dec, na.rm = TRUE)) |>
+  summarize(min(dec, na.rm = TRUE)) |>
   pull()
 
-dis2025 <- dis2025 |>
-  mutate(
-    latitude = round(latitude, latmin_decimals),
-    longitude = round(longitude, lonmin_decimals))
-
-#Convert back to numeric function to be able to complete mathematical function
+#Converting back to numeric function to be able to complete mathematical function.
 
 dis2025 <- dis2025 %>%
   mutate(
@@ -67,8 +64,12 @@ dis2025 <- dis2025 %>%
     latitude = round(latitude, latmin_decimals),
     longitude = round(longitude, lonmin_decimals))
 
+#Inspect data table to confirm code has worked.
+dis2025
+
 # Filter out the NA's in the nest column (That means that these disorientations
-#were not from hatches but from adult nesters, therefore irrelevant to our current question.)
+#were not from hatches but from adult nesters, therefore irrelevant to our
+#current question.)
 
 dis2025 <- dis2025 |>
   filter(!is.na(nest))
@@ -89,26 +90,12 @@ dis2025 <- dis2025 %>%
       str_detect(nest, "C0") ~ "miami beach",
       TRUE ~ NA_character_))
 
-# How many nests disoriented per site?
-#Use n_distinct for unique entries because some prefixes are repeated.
+#Export clean data file
+write_rds(
+  x = dis2025,
+  file = "data/processed/disorientations2025_clean.rds")
 
-nests_per_site <- dis2025 |>
-  group_by(sites) |>
-  summarize(nests = n_distinct(nest))
+################################################################################
 
-nests_per_site
 
-#Plot nests per site
 
-ggplot(nests_per_site,
-       aes(x = sites,
-           y = nests,
-           fill = nests)) +
-  geom_col() +
-  scale_fill_gradient(low = "lightblue", high = "darkblue") +
-  labs(
-    title = "Disorientation Density by Site",
-    x = "Site",
-    y = "Nests",
-    fill = "Nest Count") +
-  theme_minimal()
