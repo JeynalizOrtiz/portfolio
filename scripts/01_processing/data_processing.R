@@ -90,6 +90,13 @@ dis2025 <- dis2025 %>%
       str_detect(nest, "C0") ~ "miami beach",
       TRUE ~ NA_character_))
 
+#Manually correcting a date mistake on the date column, row 66
+dis2025[66, "date"] <- "6/30/2025"
+
+# Step 2: convert my date column into an actual date object, overwrite
+dis2025 <- dis2025 |>
+  mutate(date = mdy(date))
+
 #Export clean data file
 write_rds(
   x = dis2025,
