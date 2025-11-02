@@ -33,7 +33,7 @@ dis_per_site_plot <- ggplot(data = dis_per_site,
                                 y = nests)) +
   geom_col(fill = "steelblue1") +
   labs(
-    title = "Disorientation Count by Site",
+    title = "Disorientation count by site",
     x = "Site",
     y = "Disorientation Count",
     fill = "Nest count",
