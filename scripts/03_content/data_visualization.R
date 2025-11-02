@@ -118,7 +118,7 @@ species_facets_plot2 <- ggplot(
     subtitle = "Each panel shows site-level nest counts (n)",
     x = "Site",
     y = "Nest count (n)",
-    caption = "Source: Miami-Dade Sea Turtle Conservation Porgram (2025)") +
+    caption = "Source: Miami-Dade Sea Turtle Conservation Program (2025)") +
   theme_minimal() +
   theme(
     plot.title.position = "plot",
@@ -132,7 +132,7 @@ species_facets_plot2
 patchwork_figure <- (dis_per_site_plot | species_dispersite_plot) +
   plot_annotation(
     title = "Sea turtle Nesting and Disorientation Patterns by Site",
-    caption = "Source: Miami-Dade Sea Turtle Lighting Team (2025)")
+    caption = "Source: Miami-Dade Sea Turtle Conservation Program (2025)")
 
 patchwork_figure
 
