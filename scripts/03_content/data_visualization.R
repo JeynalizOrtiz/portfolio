@@ -122,8 +122,9 @@ species_facets_plot2 <- ggplot(
   theme_minimal() +
   theme(
     plot.title.position = "plot",
-    axis.text.x = element_text(angle = 35, hjust = 1),
-    strip.text = element_text(face = "bold"))
+    axis.text.x = element_text(angle = 0, hjust = 1),
+    strip.text = element_text(face = "bold")) +
+  coord_flip()
 
 species_facets_plot1
 species_facets_plot2
