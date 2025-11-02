@@ -94,7 +94,7 @@ species_facets_plot1 <- ggplot(
   facet_wrap(~ species, nrow = 1, scales = "free_y") +
   expand_limits(y = 0:max_nests) +
   labs(
-    title = "Nest Counts by Site",
+    title = "Nest counts by site",
     subtitle = "Each panel shows site-level nest counts (n)",
     x = "Site",
     y = "Nest count (n)",
@@ -114,7 +114,7 @@ species_facets_plot2 <- ggplot(
   facet_wrap(~ species, nrow = 1, scales = "free_y") +
   expand_limits(y = 0:max_nests) +
   labs(
-    title = "Nest Counts by Site",
+    title = "Nest counts by site",
     subtitle = "Each panel shows site-level nest counts (n)",
     x = "Site",
     y = "Nest count (n)",
@@ -131,7 +131,7 @@ species_facets_plot2
 
 patchwork_figure <- (dis_per_site_plot | species_dispersite_plot) +
   plot_annotation(
-    title = "Sea turtle Nesting and Disorientation Patterns by Site",
+    title = "Sea turtle nesting and disorientation patterns by site",
     caption = "Source: Miami-Dade Sea Turtle Conservation Program (2025)")
 
 patchwork_figure
