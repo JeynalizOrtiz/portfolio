@@ -35,7 +35,7 @@ dis_per_site_plot <- ggplot(data = dis_per_site,
   labs(
     title = "Disorientation count by site",
     x = "Site",
-    y = "Disorientation Count",
+    y = "Disorientation count",
     fill = "Nest count",
     caption = "Source: Miami-Dade County Parks Sea Turtle Conservation Program (2025)") +
   theme_minimal() +
