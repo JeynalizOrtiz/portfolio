@@ -165,7 +165,7 @@ world_coast <- ne_download(scale = 10,
 
 mapview(world_coast)
 
-data_crs <- st_crs(us_coast)
+data_crs <- st_crs(world_coast)
 
 # Crop to Florida bounding box
 fl_crop <- st_bbox(c(xmin = -87.8,
@@ -456,6 +456,24 @@ combined_maps <- (kb_map | mb_map | ha_map) /
 
 combined_maps
 
+# For easier visuals
+
+south_maps <- (kb_map | fi_map) +
+  plot_annotation(title = "Sea turtle disorientations (2025)",
+    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold")))
+
+miamibeach_map <- (mb_map) +
+   plot_annotation(title = "Sea turtle disorientations (2025)",
+    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold")))
+
+north_maps <- (ha_map | gb_map) +
+  plot_annotation(title = "Sea turtle disorientations (2025)",
+    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold")))
+
+south_maps
+miamibeach_map
+north_maps
+
 #Save your plot
 
 ggsave(filename = "results/img/dispersiteplot.png",
@@ -473,3 +491,26 @@ ggsave(filename = "results/img/species_facets_plot2.png",
 ggsave(filename = "results/img/patchwork_figure.png",
   plot = patchwork_figure)
 
+ggsave(filename = "results/img/disshp_patchwork.png",
+  plot   = combined_maps,
+  width  = 11,
+  height = 6,
+  dpi    = 300)
+
+ggsave(filename = "results/img/southmaps_patchwork.png",
+  plot   = south_maps,
+  width  = 11,
+  height = 6,
+  dpi    = 300)
+
+ggsave(filename = "results/img/miamibeach.png",
+  plot   = miamibeach_map,
+  width  = 11,
+  height = 6,
+  dpi    = 300)
+
+ggsave(filename = "results/img/northmaps_patchwork.png",
+  plot   = north_maps,
+  width  = 11,
+  height = 6,
+  dpi    = 300)
