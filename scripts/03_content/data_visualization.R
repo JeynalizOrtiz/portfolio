@@ -229,6 +229,23 @@ fl_ggplot <- ggplot() +
 
 fl_ggplot
 
+# Filter by site to start building maps by using patchwork
+
+kb_sf <- dis2025_sf |>
+  filter(sites == "key biscayne")
+
+mb_sf <- dis2025_sf |>
+  filter(sites == "miami beach")
+
+ha_sf <- dis2025_sf |>
+  filter(sites == "haulover")
+
+fi_sf <- dis2025_sf |>
+  filter(sites == "fisher island")
+
+gb_sf <- dis2025_sf |>
+  filter(sites == "golden beach")
+
 #Save your plot
 
 ggsave(filename = "results/img/dispersiteplot.png",
