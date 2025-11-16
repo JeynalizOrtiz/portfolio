@@ -359,6 +359,35 @@ ha_map <- ggplot() +
 
 ha_map
 
+# fisher island map
+
+fi_bb <- st_bbox(fi_sf)
+
+fi_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = fi_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(fi_bb["xmin"] - pad,
+                      fi_bb["xmax"] + pad),
+    ylim   = c(fi_bb["ymin"] - pad,
+               fi_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "tl",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "key biscayne",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+fi_map
+
 
 #Save your plot
 
