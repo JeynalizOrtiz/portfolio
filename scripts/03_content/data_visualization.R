@@ -156,6 +156,30 @@ dis2025_sf <- st_as_sf(dis2025_clean,
 #Quick check
 plot(st_geometry(dis2025_sf))
 
+#Add the United States coastlines
+
+us_coast <- ne_download(scale = 10,
+                        type = "land",
+                        category = "physical",
+                        returnclass = "sf")
+
+# Crop to Florida bounding box
+fl_crop <- st_bbox(c(xmin = -87.8,
+                    xmax = -79.8,
+                    ymin = 24.0,
+                    ymax = 31.2),
+                  crs = st_crs())
+
+fl_coast <- st_crop(us_coast, fl_crop)
+
+# Quick check
+mapview(list(dis2025_sf, fl_coast))
+
+
+# Crop coastline to Florida region
+coast_fl <- st_crop(coast, fl_box)
+
+
 #Save your plot
 
 ggsave(filename = "results/img/dispersiteplot.png",
