@@ -389,6 +389,34 @@ fi_map <- ggplot() +
 fi_map
 
 
+mb_bb <- st_bbox(mb_sf)
+
+mb_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = mb_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(mb_bb["xmin"] - pad,
+                      mb_bb["xmax"] + pad),
+    ylim   = c(mb_bb["ymin"] - pad,
+               mb_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "tl",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "key biscayne",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+mb_map
+
+
 #Save your plot
 
 ggsave(filename = "results/img/dispersiteplot.png",
