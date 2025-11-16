@@ -158,10 +158,12 @@ plot(st_geometry(dis2025_sf))
 
 #Add the United States coastlines
 
-us_coast <- ne_download(scale = 10,
+world_coast <- ne_download(scale = 10,
                         type = "land",
                         category = "physical",
                         returnclass = "sf")
+
+mapview(world_coast)
 
 data_crs <- st_crs(us_coast)
 
@@ -172,7 +174,7 @@ fl_crop <- st_bbox(c(xmin = -87.8,
                     ymax = 31.2),
                   crs = data_crs)
 
-fl_coast <- st_crop(us_coast, fl_crop)
+fl_coast <- st_crop(world_coast, fl_crop)
 
 # Quick check
 
@@ -186,7 +188,7 @@ miami_crop <- st_bbox(c(xmin = -80.300,
                         ymax = 26.05),
                       crs = data_crs)
 
-miami_coast <- st_crop(us_coast, miami_crop)
+miami_coast <- st_crop(world_coast, miami_crop)
 
 #Create a map view of Florida coastline that narrows down to the site coastline
 #and disorientation data
@@ -200,6 +202,30 @@ fl_ggplot <- ggplot() +
           fill = "gray95",
           color = "black",
           size = 0.3)
+
+#Adding disorientation data and relevant aesthetics
+fl_ggplot <- ggplot() +
+  geom_sf(data = miami_coast,
+          fill = "gray95",
+          color = "black",
+          size = 0.3) +
+  geom_sf(data = dis2025_sf) +
+  coord_sf(crs  = 4326,
+    xlim = c(miami_crop["xmin"], miami_crop["xmax"]),
+    ylim = c(miami_crop["ymin"], miami_crop["ymax"])) +
+  annotation_scale(location  = "bl",
+    width_hint = 0.3,
+    bar_cols  = c("black", "white")) +
+  annotation_north_arrow(
+    location   = "tl",
+    which_north = "true",
+    style = north_arrow_fancy_orienteering()) +
+  xlab("longitude") +
+  ylab("latitude") +
+  theme_classic() +
+  theme(legend.position = "left",
+    plot.title = element_blank(),
+    plot.subtitle = element_blank())
 
 fl_ggplot
 
