@@ -176,8 +176,6 @@ fl_coast <- st_crop(us_coast, fl_crop)
 mapview(list(dis2025_sf, fl_coast))
 
 
-# Crop coastline to Florida region
-coast_fl <- st_crop(coast, fl_box)
 
 
 #Save your plot
