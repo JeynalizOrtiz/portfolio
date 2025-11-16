@@ -188,13 +188,21 @@ miami_crop <- st_bbox(c(xmin = -80.300,
 
 miami_coast <- st_crop(us_coast, miami_crop)
 
+#Create a map view of Florida coastline that narrows down to the site coastline
+#and disorientation data
+
 mapview(list(dis2025_sf, fl_coast, miami_coast))
 
-ggplot() +
+#Showcasing Florida coastline in ggplot
+
+fl_ggplot <- ggplot() +
   geom_sf(data = fl_coast,
           fill = "gray95",
           color = "black",
-          size = 0.3) +
+          size = 0.3)
+
+fl_ggplot
+
 #Save your plot
 
 ggsave(filename = "results/img/dispersiteplot.png",
