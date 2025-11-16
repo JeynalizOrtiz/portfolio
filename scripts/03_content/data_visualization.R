@@ -322,7 +322,7 @@ kb_map <- ggplot() +
                    width_hint = 0.25) +
   annotation_north_arrow(location = "tl",
                          style = north_arrow_fancy_orienteering()) +
-  labs(title = "key biscayne",
+  labs(title = "Key biscayne",
        x = "longitude",
        y = "latitude",
        color = "species") +
@@ -351,7 +351,7 @@ ha_map <- ggplot() +
                    width_hint = 0.25) +
   annotation_north_arrow(location = "tl",
                          style = north_arrow_fancy_orienteering()) +
-  labs(title = "key biscayne",
+  labs(title = "Haulover",
        x = "longitude",
        y = "latitude",
        color = "species") +
@@ -380,7 +380,7 @@ fi_map <- ggplot() +
                    width_hint = 0.25) +
   annotation_north_arrow(location = "tl",
                          style = north_arrow_fancy_orienteering()) +
-  labs(title = "key biscayne",
+  labs(title = "Fisher island",
        x = "longitude",
        y = "latitude",
        color = "species") +
@@ -388,6 +388,7 @@ fi_map <- ggplot() +
 
 fi_map
 
+# miami beach map
 
 mb_bb <- st_bbox(mb_sf)
 
@@ -408,7 +409,7 @@ mb_map <- ggplot() +
                    width_hint = 0.25) +
   annotation_north_arrow(location = "tl",
                          style = north_arrow_fancy_orienteering()) +
-  labs(title = "key biscayne",
+  labs(title = "Miami beach",
        x = "longitude",
        y = "latitude",
        color = "species") +
@@ -416,6 +417,44 @@ mb_map <- ggplot() +
 
 mb_map
 
+# golden beach map
+
+gb_bb <- st_bbox(gb_sf)
+
+gb_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = gb_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(gb_bb["xmin"] - pad,
+                      gb_bb["xmax"] + pad),
+    ylim   = c(gb_bb["ymin"] - pad,
+               gb_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "tl",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "Golden beach",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+gb_map
+
+# Combining maps using patchwork
+
+combined_maps <- (kb_map | mb_map | ha_map) /
+                 (fi_map | gb_map | plot_spacer()) +
+  plot_annotation(
+    title = "Sea turtle disorientations (2025)",
+    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold")))
+
+combined_maps
 
 #Save your plot
 
