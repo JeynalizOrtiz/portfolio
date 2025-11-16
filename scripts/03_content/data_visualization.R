@@ -4,7 +4,7 @@
 #
 # Jeynaliz Ortiz Gonzalez
 #
-# October 19, 2025, edited on November 2, 2025
+# October 19, 2025, edited on November 2, 2025, edited on November 15,2025
 #
 # Graph and content development for data portrayal using cleaned, processed
 # data of sea turtle disorientations in Miami-Dade County (2025).
@@ -15,6 +15,14 @@
 library(tidyverse)
 library(ggplot2)
 library(patchwork)
+library(sf)
+library(ggspatial)
+library(rnaturalearth)
+install.packages("rnaturalearthdata")
+library(rnaturalearthdata)
+library(terra)
+library(tidyterra)
+library(mapview)
 
 #Load clean, processed data
 dis2025_clean <- read_rds(file = "data/processed/disorientations2025_clean.rds")
@@ -136,6 +144,17 @@ patchwork_figure <- (dis_per_site_plot | species_dispersite_plot) +
     caption = "Source: Miami-Dade Sea Turtle Conservation Program (2025)")
 
 patchwork_figure
+
+# Working with spatial data
+
+#Converting data to spatial data. Creates a new geometry column
+dis2025_sf <- st_as_sf(dis2025_clean,
+  coords = c("longitude", "latitude"),
+  crs    = 4326,
+  remove = FALSE)
+
+#Quick check
+plot(st_geometry(dis2025_sf))
 
 #Save your plot
 
