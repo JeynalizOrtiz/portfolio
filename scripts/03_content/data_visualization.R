@@ -246,6 +246,90 @@ fi_sf <- dis2025_sf |>
 gb_sf <- dis2025_sf |>
   filter(sites == "golden beach")
 
+#Create function to create site map
+
+make_site_map <- function(site_sf, title_label, base_layer, pad = 0.2) {
+  stopifnot(inherits(site_sf, "sf"), nrow(site_sf) > 0)
+  bb <- st_bbox(site_sf)
+  bb["xmin"] <- bb["xmin"] - pad
+  bb["xmax"] <- bb["xmax"] + pad
+  bb["ymin"] <- bb["ymin"] - pad
+  bb["ymax"] <- bb["ymax"] + pad
+  land_crop <- st_crop(fl_coast, bb)
+  ggplot() +
+    geom_sf(data = land_crop, fill = "gray95", color = "black") +
+    geom_sf(data = site_sf, aes(color = species), size = 2.5) +
+    coord_sf(xlim = c(bb["xmin"], bb["xmax"]),
+             ylim = c(bb["ymin"], bb["ymax"]), expand = FALSE) +
+    annotation_scale(location = "bl", width_hint = 0.25) +
+    annotation_north_arrow(location = "tl",
+                           style = north_arrow_fancy_orienteering()) +
+    labs(
+      title = title_label,
+      x = "Longitude",
+      y = "Latitude",
+      color = "Species") +
+    theme_classic() +
+    theme(
+      legend.position = "right",
+      legend.title = element_text(size = 10),
+      legend.text  = element_text(size = 9))
+      }
+
+p_kb <- make_site_map(kb_sf, "key biscayne")
+p_mb <- make_site_map(mb_sf, "miami beach")
+p_ha <- make_site_map(ha_sf, "haulover")
+p_fi <- make_site_map(fi_sf, "fisher island")
+p_gb <- make_site_map(gb_sf, "golden beach")
+
+# Individual maps to showcase sites individually
+
+p_kb
+p_mb
+p_ha
+p_fi
+p_gb
+
+# Trying shaoefile
+
+fl_shp <- st_read("Detailed_Florida_State_Boundary/Detailed_Florida_State_Boundary.shp")
+
+
+# Make sure shapefile and points have the same CRS
+
+fl_shp <- st_transform(fl_shp, st_crs(dis2025_sf))
+
+#KB map using shapefile
+
+pad <- 0.05
+
+kb_bb <- st_bbox(kb_sf)
+
+kb_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = kb_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(kb_bb["xmin"] - pad,
+                      kb_bb["xmax"] + pad),
+    ylim   = c(kb_bb["ymin"] - pad,
+               kb_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "tl",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "key biscayne",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+kb_map
+
 #Save your plot
 
 ggsave(filename = "results/img/dispersiteplot.png",
