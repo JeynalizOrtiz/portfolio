@@ -330,6 +330,36 @@ kb_map <- ggplot() +
 
 kb_map
 
+# haulover map
+
+ha_bb <- st_bbox(ha_sf)
+
+ha_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = ha_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(ha_bb["xmin"] - pad,
+                      ha_bb["xmax"] + pad),
+    ylim   = c(ha_bb["ymin"] - pad,
+               ha_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "tl",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "key biscayne",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+ha_map
+
+
 #Save your plot
 
 ggsave(filename = "results/img/dispersiteplot.png",
