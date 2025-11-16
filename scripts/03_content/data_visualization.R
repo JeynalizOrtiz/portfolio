@@ -80,7 +80,7 @@ species_dispersite_plot <- ggplot(data = species_dispersite,
        subtitle = "Cell values represent nest counts (n)",
        x = "Site",
        y = "Species",
-       caption = "Source: Miami-Dade Sea Turtle Conservation Porgram (2025)",
+       caption = "Source: Miami-Dade Sea Turtle Conservation Program (2025)",
        fill = "Nest Count") +
   theme_minimal() +
   theme(plot.title.position = "plot")
@@ -163,21 +163,38 @@ us_coast <- ne_download(scale = 10,
                         category = "physical",
                         returnclass = "sf")
 
+data_crs <- st_crs(us_coast)
+
 # Crop to Florida bounding box
 fl_crop <- st_bbox(c(xmin = -87.8,
                     xmax = -79.8,
                     ymin = 24.0,
                     ymax = 31.2),
-                  crs = st_crs())
+                  crs = data_crs)
 
 fl_coast <- st_crop(us_coast, fl_crop)
 
 # Quick check
+
 mapview(list(dis2025_sf, fl_coast))
 
+#Crop to Miami-Dade County
 
+miami_crop <- st_bbox(c(xmin = -80.300,
+                        ymin = 25.65,
+                        xmax = -80.10,
+                        ymax = 26.05),
+                      crs = data_crs)
 
+miami_coast <- st_crop(us_coast, miami_crop)
 
+mapview(list(dis2025_sf, fl_coast, miami_coast))
+
+ggplot() +
+  geom_sf(data = fl_coast,
+          fill = "gray95",
+          color = "black",
+          size = 0.3) +
 #Save your plot
 
 ggsave(filename = "results/img/dispersiteplot.png",
