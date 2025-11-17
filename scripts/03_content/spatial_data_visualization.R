@@ -149,6 +149,8 @@ make_site_map <- function(site_sf, title_label, base_layer, pad = 0.2) {
                            style = north_arrow_fancy_orienteering()) +
     labs(
       title = title_label,
+      caption = "2025 disorientation data provided by the Miami-Dade County
+       Parks Sea Turtle Conservation Program",
       x = "Longitude",
       y = "Latitude",
       color = "Species") +
@@ -366,11 +368,35 @@ north_maps
 
 #Save your plot
 
-p_kb
-p_mb
-p_ha
-p_fi
-p_gb
+ggsave(filename = "results/img/p_kb.png",
+  plot   = p_kb,
+  width  = 11,
+  height = 6,
+  dpi    = 300)
+
+ggsave(filename = "results/img/p_mb.png",
+  plot   = p_mb,
+  width  = 11,
+  height = 6,
+  dpi    = 300)
+
+ggsave(filename = "results/img/dp_ha.png",
+  plot   = p_ha,
+  width  = 11,
+  height = 6,
+  dpi    = 300)
+
+ggsave(filename = "results/img/p_fi.png",
+  plot   = p_fi,
+  width  = 11,
+  height = 6,
+  dpi    = 300)
+
+ggsave(filename = "results/img/p_gb.png",
+  plot   = p_bg,
+  width  = 11,
+  height = 6,
+  dpi    = 300)
 
 ggsave(filename = "results/img/disshp_patchwork.png",
   plot   = combined_maps,
