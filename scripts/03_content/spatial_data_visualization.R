@@ -87,6 +87,7 @@ fl_ggplot <- ggplot() +
           size = 0.3)
 
 #Adding disorientation data and relevant aesthetics
+
 fl_ggplot <- ggplot() +
   geom_sf(data = miami_coast,
           fill = "gray95",
@@ -184,7 +185,7 @@ fl_shp <- st_read("Detailed_Florida_State_Boundary/Detailed_Florida_State_Bounda
 
 fl_shp <- st_transform(fl_shp, st_crs(dis2025_sf))
 
-#KB map using shapefile
+#Key biscayne map using shapefile
 
 pad <- 0.05
 
@@ -421,3 +422,6 @@ ggsave(filename = "results/img/northmaps_patchwork.png",
   width  = 11,
   height = 6,
   dpi    = 300)
+
+#Future directions: Crop into the sites more. Add polygons for properties relevant
+#to disorientation events.
