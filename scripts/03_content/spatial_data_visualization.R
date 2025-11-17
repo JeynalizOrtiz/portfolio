@@ -4,9 +4,10 @@
 #
 # Jeynaliz Ortiz Gonzalez
 #
-# \November 15,2025
+# November 15,2025
 #
-# Graph and content development for data portrayal using cleaned, processed
+# Spatial Analysis:
+# Create maps for data portrayal using cleaned, processed
 # data of sea turtle disorientations in Miami-Dade County (2025).
 
 ################################################################################
