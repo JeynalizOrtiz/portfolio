@@ -89,7 +89,6 @@ dis2025 <- dis2025 %>%
     longitude = round(longitude, lonmin_decimals))
 
 #Inspect data table to confirm code has worked.
-dis2025
 
 # Filter out the NA's in the nest column (That means that these disorientations
 #were not from hatches but from adult nesters, therefore irrelevant to our
@@ -129,6 +128,66 @@ write_rds(
 
 # Main findings 
 
+```{r}
+dis2025_clean <- read_rds(file = "data/processed/disorientations2025_clean.rds")
+
+dis_per_site <- dis2025_clean |>
+   group_by(sites) |>
+   summarize(nests = n_distinct(nest))
+
+dis_per_site
+
+dis_per_site_plot <- ggplot(data = dis_per_site,
+                            aes(x = sites,
+                                y = nests)) +
+  geom_col(fill = "steelblue1") +
+  labs(
+    title = "Disorientation count by site",
+    x = "Site",
+    y = "Disorientation count",
+    fill = "Nest count",
+    caption = "Source: Miami-Dade County Parks Sea Turtle Conservation Program (2025)") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    axis.text.x = element_text(angle = 0, hjust = 0.75))
+
+dis_per_site_plot
+
+#Creating a heat map that demonstrates nest per site while simultaneously comparing
+#sea turtle species. Find original species_dispersite on Analysis.R file.
+
+species_summary <- dis2025_clean |>
+  group_by(sites,
+           species) |>
+  summarize(nests = n_distinct(nest), .groups = "drop")
+
+species_summary
+
+species_dispersite <- species_summary |>
+  left_join(dis_per_site,
+            by = "sites",
+            suffix = c("_species", "_total")) |>
+  mutate(percent = round((nests_species / nests_total) * 100, 1))
+
+species_dispersite
+
+species_dispersite_plot <- ggplot(data = species_dispersite,
+                                  aes(x = sites,
+                                      y = species,
+                                      fill = nests_species)) +
+  geom_tile(color = "white") +
+  labs(title = "Heat map of nests by site and species",
+       subtitle = "Cell values represent nest counts (n)",
+       x = "Site",
+       y = "Species",
+       caption = "Source: Miami-Dade Sea Turtle Conservation Program (2025)",
+       fill = "Nest Count") +
+  theme_minimal() +
+  theme(plot.title.position = "plot")
+
+species_dispersite_plot
+```
 
 # References
 
