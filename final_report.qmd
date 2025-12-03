@@ -3,9 +3,10 @@ title: "Final Report"
 subtitle: "A description of EVR628 data visualization project"
 author: "Jeynaliz Ortiz Gonzalez"
 format:
- html:
-  toc: true
-   message: false 
+  html:
+    toc: true
+execute:
+  message: false
 ---
 
 # Introduction
