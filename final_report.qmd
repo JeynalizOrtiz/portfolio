@@ -1,26 +1,26 @@
 ---
 title: "Final Report"
+subtitle: "A description of EVR628 data visualization project"
 author: "Jeynaliz Ortiz Gonzalez"
-format: html
+format:
+ html:
+  toc: true
+   message: false 
 ---
 
-## Quarto
+# Introduction
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
-## Running Code
+# Objective(s)
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
 
-```{r}
-1 + 1
-```
+# Data sources
 
-You can add options to executable code like this 
 
-```{r}
-#| echo: false
-2 * 2
-```
+# Data processing 
 
-The `echo: false` option disables the printing of code (only output is displayed).
+
+# Main findings 
+
+
+# References
