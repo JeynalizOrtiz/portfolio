@@ -20,7 +20,7 @@ Haulover, and Golden Beach.
 
 The objectives of this dataset analysis is to quantify the amount of sea turtle
 hatchling disorientations per site during the timeframe of collection (nesting season, 2025).
-After quantification, map will be made using the available coordinates to see wheren they are kocated in refrence to properties. 
+After quantification, map will be made using the available coordinates to see where they are located in refrence to properties. 
 
 # Data sources
 
