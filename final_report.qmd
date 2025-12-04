@@ -191,6 +191,13 @@ write_rds(
 ```{r}
 #| message: false
 #| warning: false
+
+# Load library
+library(sf)
+library(ggspatial)
+library(ggplot2)
+library(patchwork)
+
 dis2025_clean <- read_rds(file = "data/processed/disorientations2025_clean.rds")
 
 dis_per_site <- dis2025_clean |>
@@ -254,6 +261,28 @@ species_dispersite_plot
 
 fl_shp <- st_read("Detailed_Florida_State_Boundary/Detailed_Florida_State_Boundary.shp")
 
+#Converting data to spatial data. Creates a new geometry column
+dis2025_sf <- st_as_sf(dis2025_clean,
+  coords = c("longitude", "latitude"),
+  crs    = 4326,
+  remove = FALSE)
+
+# Filter by site to start building maps by using patchwork
+
+kb_sf <- dis2025_sf |>
+  filter(sites == "key biscayne")
+
+mb_sf <- dis2025_sf |>
+  filter(sites == "miami beach")
+
+ha_sf <- dis2025_sf |>
+  filter(sites == "haulover")
+
+fi_sf <- dis2025_sf |>
+  filter(sites == "fisher island")
+
+gb_sf <- dis2025_sf |>
+  filter(sites == "golden beach")
 
 # Make sure shapefile and points have the same CRS
 
