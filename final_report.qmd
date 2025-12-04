@@ -105,8 +105,7 @@ The dataset was cleaned by renaming columns, correcting a GPS export error, and 
 County Parks Sea Turtle Conservation Program data collecting. Site names were assigned based on nest codes, a date entry error was corrected, and the final cleaned dataset was saved as an RDS file for subsequent analyses.
 
 ```{r}
-#| message: false
-#| warning: false
+
 #Load libraries
 library(tidyverse)
 library(ggplot2)
@@ -202,8 +201,6 @@ write_rds(
 # Main findings 
 
 ```{r}
-#| message: false
-#| warning: false
 
 # Load library
 library(sf)
@@ -223,6 +220,8 @@ dis_per_site
 Across all surveyed sites, disorientation events and nest counts varied substantially, with Miami Beach showing the highest number of disorientations (n = 89), followed by Haulover (n = 47) and Key Biscayne (n = 30). Fisher Island had the fewest disorientations (n = 4). Across all surveyed sites, Miami Beach exhibited the highest number of disorientation events (`r dis_per_site$nests[dis_per_site$sites=="miami beach"]`), followed by Haulover (`r dis_per_site$nests[dis_per_site$sites=="haulover"]`) and Key Biscayne (`r dis_per_site$nests[dis_per_site$sites=="key biscayne"]`). Green turtles (*Chelonia mydas*) contributed a smaller but consistent portion of nests at every site, while leatherback (*Dermochelys coriacea*) nesting occurred only at Golden Beach, Haulover, and Miami Beach, and in relatively low numbers. When accounting for each site’s total nesting activity, loggerheads comprised the majority of nests at most sites—for example, 75% of nests at Fisher Island and 73% at Key Biscayne—whereas greens accounted for roughly 17–40% depending on location.
 
 ```{r}
+#| fig-cap: "Disorientation count by site during the 2025 nesting season."
+
 dis_per_site_plot <- ggplot(data = dis_per_site,
                             aes(x = sites,
                                 y = nests)) +
@@ -239,7 +238,10 @@ dis_per_site_plot <- ggplot(data = dis_per_site,
     axis.text.x = element_text(angle = 0, hjust = 0.75))
 
 dis_per_site_plot
+```
 
+```{r}
+#| fig-cap: "Heat map of nests by site and species."
 #Creating a heat map that demonstrates nest per site while simultaneously comparing
 #sea turtle species. Find original species_dispersite on Analysis.R file.
 
@@ -273,6 +275,11 @@ species_dispersite_plot <- ggplot(data = species_dispersite,
   theme(plot.title.position = "plot")
 
 species_dispersite_plot
+```
+
+### Incorporating Shapefile
+
+```{r}
 
 # Trying shapefile
 
@@ -337,6 +344,12 @@ map <- function(data = fl_shp, x, bb, pad = 0.05, title = "title") {
 
 #############################################################################
 pad <- 0.05
+```
+
+### Maps
+
+```{r}
+#| fig-cap: "Map of Key Biscayne hatchling disorientation points overlaid on the Florida state boundary shapefile."
 
 kb_bb <- st_bbox(kb_sf)
 
@@ -364,6 +377,10 @@ kb_map <- ggplot() +
   theme_classic()
 
 kb_map
+```
+
+```{r}
+#| fig-cap: "Map of Haulover hatchling disorientation points overlaid on the Florida state boundary shapefile."
 
 # haulover map
 
@@ -393,6 +410,10 @@ ha_map <- ggplot() +
   theme_classic()
 
 ha_map
+```
+
+```{r}
+#| fig-cap: "Map of Fisher Island hatchling disorientation points overlaid on the Florida state boundary shapefile."
 
 # fisher island map
 
@@ -422,6 +443,10 @@ fi_map <- ggplot() +
   theme_classic()
 
 fi_map
+```
+
+```{r}
+#| fig-cap: "Map of Miami Beach hatchling disorientation points overlaid on the Florida state boundary shapefile."
 
 # miami beach map
 
@@ -451,6 +476,10 @@ mb_map <- ggplot() +
   theme_classic()
 
 mb_map
+```
+
+```{r}
+#| fig-cap: "Map of Golden Beach hatchling disorientation points overlaid on the Florida state boundary shapefile."
 
 # golden beach map
 
