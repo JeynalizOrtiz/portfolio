@@ -1,0 +1,506 @@
+---
+title: "Final Report"
+subtitle: "A description of EVR628 data visualization project"
+author: "Jeynaliz Ortiz Gonzalez"
+format:
+  html:
+    toc: true
+execute:
+  message: false
+---
+
+# Introduction
+
+This project contains data relevant to sea turtle hatchling disorientations at
+the moment of emergence for the 2025 year. Data showcases all disorientations in
+beaches located within 5 sites: Key Biscayne, Fisher Island, Miami Beach, 
+Haulover, and Golden Beach. 
+
+# Objective(s)
+
+The objectives of this dataset analysis is to quantify the amount of sea turtle
+hatchling disorientations per site during the timeframe of collection (nesting season, 2025).
+After quantification, map will be made using the available coordinates to see where they are located within the sites. 
+
+# Data sources
+
+The data used in this project has been collected by authorized sea turtle 
+personnel (permit MTP 150) from the Miami-Dade County Parks Sea Turtle 
+Conservation Program. This singular dataset pertains to all nest hatches across
+multiple survey areas during the 2025 nesting season. All data is reported and
+therefore, belongs to the Florida Wildlife Commission and the Miami-Dade County
+Parks Sea Turtle Conservation Program.
+
+Variables included in this data:
+
+Raw data: date, nest, species, latitude, longitude, direction, disoriented
+Clean data: date, nest, latitude, longitude, direction, disoriented, sites
+
+Description: 
+
+**date** : Categorical. Format - mm/dd/yyyy 
+       Signifies the date in which hatch and disorientation occurred.
+
+**nest** : Numerical discrete. Format -
+
+MB-N-### - Miami Beach nest and assigned number
+FI-N-### - Fisher Island nest and assigned number
+HO-N-### - Haulover nest and assigned number
+KB-N-### - Key Biscayne nest and assigned number
+GB-N-### - Golden Beach nest and assigned number
+
+MN - Prefix for missed nest (previosuly unmarked) found by hatch. Labeled by 
+     month, day, beach, surveyor initials and number of missed nest per surveyor by day.
+     Ex.: MNGB1012JOG1 - Missed nest found on Golden Beach on October 12 by
+                         JOG; 1st nest found by surveyor of the day.
+    
+C###RBH - Label assigned to relocated nests from the 2025 Bal Harbour 
+          renourishment project area. "C" stands for C. caretta, followed by 
+          nest number,followed by "R" for relocation and "BH" for Bal Harbor. 
+
+NA - No hatch disorientation
+          
+**species** : Categorical. Format - Genus species
+
+*Caretta caretta*
+*Chelonia mydas*
+*Dermochelys coriacea*
+
+**latitude** : Numerical continuous. Written with varying decimal places.
+
+**longitude** : Numerical continuous. Written with varying decimal places.
+
+**direction** : Categorical. Cardinal direction in which the sea turtles disoriented upon
+            emergence.
+            
+**disoriented** : Numerical discrete. Number of sea turtles disoriented based on
+
+<10 : less than 10
+11-50 
+#>50 : over 50
+
+**sites**: New column. Summarizes nest ID's into their respective site names. 
+
+KB-N : "key biscayne",
+HO-N : "haulover",
+FI-N : "fisher island",
+MB-N : "miami beach",
+GB-N : "golden beach",
+MNGB : "golden beach",
+MNMB : "miami beach",
+MNKB : "key biscayne",
+C0   : "miami beach"
+
+
+# Data processing 
+
+```{r}
+#| message: false
+#| warning: false
+#Load libraries
+library(tidyverse)
+library(ggplot2)
+library(janitor)
+
+#Load data
+
+dis2025 <- read.csv(file = "data/raw/disorientations2025.csv")
+
+#Clean column names
+
+dis2025 <- dis2025 |>
+  clean_names()
+
+dis2025 <- dis2025 |>
+  rename(
+    nest = nest_number,
+    direction = disorientation_direction,
+    disoriented = turtles_disoriented)
+
+#Check column names
+
+colnames(dis2025)
+
+#Addressing a GPS error in the dataset at the moment of export
+#Manually substituting correct value with base R function.
+
+dis2025[139, "latitude"] <- 25.8382267
+
+#Change the latitude and longitude to a consistent number of decimal points.
+#This has been applied because methods include two different GPS systems:
+#Trimble and Google Earth, which both yield differing decimal points.
+#Need to convert to character function to be able to round.
+
+latmin_decimals <- dis2025 |>
+  mutate(dec = nchar(sub("^[^.]*\\.?","", as.character(latitude)))) |>
+  summarize(min(dec, na.rm = TRUE)) |>
+  pull()
+
+lonmin_decimals <- dis2025 |>
+  mutate(dec = nchar(sub("^[^.]*\\.?","", as.character(longitude)))) |>
+  summarize(min(dec, na.rm = TRUE)) |>
+  pull()
+
+#Converting back to numeric function to be able to complete mathematical function.
+
+dis2025 <- dis2025 %>%
+  mutate(
+    latitude = as.numeric(latitude),
+    longitude = as.numeric(longitude)) |>
+  mutate(
+    latitude = round(latitude, latmin_decimals),
+    longitude = round(longitude, lonmin_decimals))
+
+#Inspect data table to confirm code has worked.
+
+# Filter out the NA's in the nest column (That means that these disorientations
+#were not from hatches but from adult nesters, therefore irrelevant to our
+#current question.)
+
+dis2025 <- dis2025 |>
+  filter(!is.na(nest))
+
+# Create a new column for sites
+
+dis2025 <- dis2025 %>%
+  mutate(
+    sites = case_when(
+      str_detect(nest, "^KB-N") ~ "key biscayne",
+      str_detect(nest, "^HO-N") ~ "haulover",
+      str_detect(nest, "^FI-N") ~ "fisher island",
+      str_detect(nest, "^MB-N") ~ "miami beach",
+      str_detect(nest, "^GB-N") ~ "golden beach",
+      str_detect(nest, "MNGB") ~ "golden beach",
+      str_detect(nest, "MNMB") ~ "miami beach",
+      str_detect(nest, "MNKB") ~ "key biscayne",
+      str_detect(nest, "C0") ~ "miami beach",
+      TRUE ~ NA_character_))
+
+#Manually correcting a date mistake on the date column, row 66
+dis2025[66, "date"] <- "6/30/2025"
+
+# Step 2: convert my date column into an actual date object, overwrite
+dis2025 <- dis2025 |>
+  mutate(date = mdy(date))
+
+#Export clean data file
+write_rds(
+  x = dis2025,
+  file = "data/processed/disorientations2025_clean.rds")
+```
+
+# Main findings 
+
+Across all surveyed sites, disorientation events and nest counts varied substantially, with Miami Beach showing the highest number of disorientations (n = 89), followed by Haulover (n = 47) and Key Biscayne (n = 30). Fisher Island had the fewest disorientations (n = 4). Species-level patterns revealed that loggerheads (*Caretta caretta*) were the dominant nesters across all beaches, particularly at Miami Beach (58 nests) and Haulover (30 nests). Green turtles (*Chelonia mydas*) contributed a smaller but consistent portion of nests at every site, while leatherback (*Dermochelys coriacea*) nesting occurred only at Golden Beach, Haulover, and Miami Beach, and in relatively low numbers. When accounting for each site’s total nesting activity, loggerheads comprised the majority of nests at most sites—for example, 75% of nests at Fisher Island and 73% at Key Biscayne—whereas greens accounted for roughly 17–40% depending on location.
+
+```{r}
+#| message: false
+#| warning: false
+
+# Load library
+library(sf)
+library(ggspatial)
+library(ggplot2)
+library(patchwork)
+
+dis2025_clean <- read_rds(file = "data/processed/disorientations2025_clean.rds")
+
+dis_per_site <- dis2025_clean |>
+   group_by(sites) |>
+   summarize(nests = n_distinct(nest))
+
+dis_per_site
+
+dis_per_site_plot <- ggplot(data = dis_per_site,
+                            aes(x = sites,
+                                y = nests)) +
+  geom_col(fill = "steelblue1") +
+  labs(
+    title = "Disorientation count by site",
+    x = "Site",
+    y = "Disorientation count",
+    fill = "Nest count",
+    caption = "Source: Miami-Dade County Parks Sea Turtle Conservation Program (2025)") +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    axis.text.x = element_text(angle = 0, hjust = 0.75))
+
+dis_per_site_plot
+
+#Creating a heat map that demonstrates nest per site while simultaneously comparing
+#sea turtle species. Find original species_dispersite on Analysis.R file.
+
+species_summary <- dis2025_clean |>
+  group_by(sites,
+           species) |>
+  summarize(nests = n_distinct(nest), .groups = "drop")
+
+species_summary
+
+species_dispersite <- species_summary |>
+  left_join(dis_per_site,
+            by = "sites",
+            suffix = c("_species", "_total")) |>
+  mutate(percent = round((nests_species / nests_total) * 100, 1))
+
+species_dispersite
+
+species_dispersite_plot <- ggplot(data = species_dispersite,
+                                  aes(x = sites,
+                                      y = species,
+                                      fill = nests_species)) +
+  geom_tile(color = "white") +
+  labs(title = "Heat map of nests by site and species",
+       subtitle = "Cell values represent nest counts (n)",
+       x = "Site",
+       y = "Species",
+       caption = "Source: Miami-Dade Sea Turtle Conservation Program (2025)",
+       fill = "Nest Count") +
+  theme_minimal() +
+  theme(plot.title.position = "plot")
+
+species_dispersite_plot
+
+# Trying shapefile
+
+fl_shp <- st_read("Detailed_Florida_State_Boundary/Detailed_Florida_State_Boundary.shp",
+                  quiet = TRUE)
+
+#Converting data to spatial data. Creates a new geometry column
+dis2025_sf <- st_as_sf(dis2025_clean,
+  coords = c("longitude", "latitude"),
+  crs    = 4326,
+  remove = FALSE)
+
+# Filter by site to start building maps by using patchwork
+
+kb_sf <- dis2025_sf |>
+  filter(sites == "key biscayne")
+
+mb_sf <- dis2025_sf |>
+  filter(sites == "miami beach")
+
+ha_sf <- dis2025_sf |>
+  filter(sites == "haulover")
+
+fi_sf <- dis2025_sf |>
+  filter(sites == "fisher island")
+
+gb_sf <- dis2025_sf |>
+  filter(sites == "golden beach")
+
+# Make sure shapefile and points have the same CRS
+
+fl_shp <- st_transform(fl_shp, st_crs(dis2025_sf))
+
+#Key biscayne map using shapefile
+
+#Make function for maps ######################################################
+
+map <- function(data = fl_shp, x, bb, pad = 0.05, title = "title") {
+  ggplot() +
+  geom_sf(data,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = x,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(bb["xmin"] - pad,
+                      bb["xmax"] + pad),
+    ylim   = c(bb["ymin"] - pad,
+               bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "title",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+}
+
+#############################################################################
+pad <- 0.05
+
+kb_bb <- st_bbox(kb_sf)
+
+kb_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = kb_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(kb_bb["xmin"] - pad,
+                      kb_bb["xmax"] + pad),
+    ylim   = c(kb_bb["ymin"] - pad,
+               kb_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "key biscayne",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+kb_map
+
+# haulover map
+
+ha_bb <- st_bbox(ha_sf)
+
+ha_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = ha_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(ha_bb["xmin"] - pad,
+                      ha_bb["xmax"] + pad),
+    ylim   = c(ha_bb["ymin"] - pad,
+               ha_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "Haulover",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+ha_map
+
+# fisher island map
+
+fi_bb <- st_bbox(fi_sf)
+
+fi_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = fi_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(fi_bb["xmin"] - pad,
+                      fi_bb["xmax"] + pad),
+    ylim   = c(fi_bb["ymin"] - pad,
+               fi_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "Fisher island",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+fi_map
+
+# miami beach map
+
+mb_bb <- st_bbox(mb_sf)
+
+mb_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = mb_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(mb_bb["xmin"] - pad,
+                      mb_bb["xmax"] + pad),
+    ylim   = c(mb_bb["ymin"] - pad,
+               mb_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "Miami beach",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+mb_map
+
+# golden beach map
+
+gb_bb <- st_bbox(gb_sf)
+
+gb_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = gb_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(gb_bb["xmin"] - pad,
+                      gb_bb["xmax"] + pad),
+    ylim   = c(gb_bb["ymin"] - pad,
+               gb_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "Golden beach",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+gb_map
+```
+
+# References
+
+Appelhans T, Detsch F, Reudenbach C, Woellauer S (2025). _mapview:
+  Interactive Viewing of Spatial Data in R_.
+  doi:10.32614/CRAN.package.mapview
+  <https://doi.org/10.32614/CRAN.package.mapview>, R package version
+  2.11.4, <https://CRAN.R-project.org/package=mapview>.
+
+Florida Department of Transportation. (2019). Detailed Florida state boundary.
+  Retrieved December 2, 2025 from   
+  https://gis-fdot.opendata.arcgis.com/datasets/fdot::detailed-florida-state-boundary/about
+  
+H. Wickham. ggplot2: Elegant Graphics for Data Analysis.
+  Springer-Verlag New York, 2016.
+  
+Pebesma, E., & Bivand, R. (2023). Spatial Data Science: With
+  Applications in R. Chapman and Hall/CRC.
+  https://doi.org/10.1201/9780429459016
+
+Pebesma, E. (2018). Simple Features for R: Standardized Support for
+  Spatial Vector Data. The R Journal 10 (1), 439-446.
+  https://doi.org/10.32614/RJ-2018-009
+  
+Pedersen T (2025). _patchwork: The Composer of Plots_.
+  doi:10.32614/CRAN.package.patchwork
+  <https://doi.org/10.32614/CRAN.package.patchwork>, R package version
+  1.3.2, <https://CRAN.R-project.org/package=patchwork>.
+  
+R Core Team (2025). _R: A Language and Environment for Statistical
+  Computing_. R Foundation for Statistical Computing, Vienna, Austria.
+  <https://www.R-project.org/>.
+  
+  
+
