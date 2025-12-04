@@ -1,37 +1,39 @@
 ---
 title: "Final Report"
-subtitle: "A description of EVR628 data visualization project"
+subtitle: "EVR628 data visualization project"
 author: "Jeynaliz Ortiz Gonzalez"
 format:
   html:
     toc: true
-execute:
-  message: false
 code-fold: true
 code-tools: true
+  execute:
+  message: false
+  warnings: false
+
 ---
 
 # Introduction
 
-This project contains data relevant to sea turtle hatchling disorientations at
-the moment of emergence for the 2025 year. Data showcases all disorientations in
-beaches located within 5 sites: Key Biscayne, Fisher Island, Miami Beach, 
-Haulover, and Golden Beach. 
+This project contains data relevant to sea turtle hatchling disorientation events documented 
+during the 2025 sea turtle nesting season. Data showcases all disorientations in
+beaches located within 5 Miami-Dade County Beaches: Key Biscayne, Fisher Island, Miami Beach, 
+Haulover, and Golden Beach. The dataset captures spatial locations, species identity, and the magnitude of each disorientation event recorded by trained survey personnel.
 
-# Objective(s)
+# Objectives
 
-The objectives of this dataset analysis is to quantify the amount of sea turtle
-hatchling disorientations per site during the timeframe of collection (nesting season, 2025).
-After quantification, map will be made using the available coordinates to see where they are located within the sites. 
+The objective of this analysis is to quantify hatchling disorientation events per site and visualize their spatial distribution using GPS coordinates. This includes summarizing nest counts by species and exploring spatial patterns in disorientation hotspots.
 
 # Data sources
 
 The data used in this project has been collected by authorized sea turtle 
-personnel (permit MTP 150) from the Miami-Dade County Parks Sea Turtle 
+personnel (permit MTP-150) from the Miami-Dade County Parks Sea Turtle 
 Conservation Program. This singular dataset pertains to all nest hatches across
 multiple survey areas during the 2025 nesting season. All data is reported and
 therefore, belongs to the Florida Wildlife Commission and the Miami-Dade County
-Parks Sea Turtle Conservation Program.
+Parks Sea Turtle Conservation Program. 
+
+Raw variables include date, nest code, latitude, longitude, species, disorientation direction, and number of turtles disoriented. The cleaned dataset includes an additional variable that assigns each nest to its corresponding survey site. The following discusses this more in depth:
 
 Variables included in this data:
 
@@ -57,8 +59,8 @@ MN - Prefix for missed nest (previosuly unmarked) found by hatch. Labeled by
                          JOG; 1st nest found by surveyor of the day.
     
 C###RBH - Label assigned to relocated nests from the 2025 Bal Harbour 
-          renourishment project area. "C" stands for C. caretta, followed by 
-          nest number,followed by "R" for relocation and "BH" for Bal Harbor. 
+          renourishment project area. "C" stands for *C. caretta*, followed by 
+          nest number,followed by "R" for relocation and "BH" for Bal Harbour. 
 
 NA - No hatch disorientation
           
@@ -98,6 +100,8 @@ C0   : "miami beach"
 
 The dataset was cleaned by renaming columns, correcting a GPS export error, and rounding latitude and longitude values to consistent decimal places to address differences between Trimble and Google Earth outputs, both of which are GPS methods applied in the Miami-Dade
 County Parks Sea Turtle Conservation Program data collecting. Site names were assigned based on nest codes, a date entry error was corrected, and the final cleaned dataset was saved as an RDS file for subsequent analyses.
+
+The cleaned dataset contains ```r nrow(dis2025_clean)``` total hatch-related disorientation observations.
 
 ```{r}
 #| message: false
