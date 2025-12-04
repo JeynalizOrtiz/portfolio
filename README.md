@@ -27,9 +27,10 @@ the moment of emergence for the 2025 year. Data showcases all disorientations in
 beaches located within 5 sites: Key Biscayne, Fisher Island, Miami Beach, 
 Haulover, and Golden Beach. 
 
-Objective: To display a heatmap that identifies disorientation hotspots and 
-later combine with property GPS coordinates to determine which coastal properties
-are located within disorientation hotspots.
+Objective: The objective of this analysis is to quantify hatchling disorientation 
+events per site and visualize their spatial distribution using GPS coordinates. 
+This includes summarizing nest counts by species and exploring spatial patterns 
+in disorientation hotspots.
 
 Repository: gitignore, data folder, README, results folder, and scripts folder. 
 
