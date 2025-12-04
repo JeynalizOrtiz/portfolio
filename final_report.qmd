@@ -462,41 +462,6 @@ gb_map <- ggplot() +
   theme_classic()
 
 gb_map
-
-# Combining maps using patchwork - NOT FINAL FIGURE
-
-combined_maps <- (kb_map | mb_map | ha_map) /
-                 (fi_map | gb_map | plot_spacer()) +
-  plot_annotation(title = "Sea turtle disorientations (2025)",
-                  theme = theme(plot.title = element_text(hjust = 0.5,
-                                                          face = "bold")))
-
-combined_maps
-
-# For easier visuals - Added captions to final visuals
-
-south_maps <- (kb_map | fi_map) +
-  plot_annotation(title = "Sea turtle disorientations (2025)",
-    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold"))) +
-  labs(caption = "2025 disorientation data provided by the Miami-Dade County
-       Parks Sea Turtle Conservation Program")
-
-
-miamibeach_map <- (mb_map) +
-  labs(title = "Sea turtle disorientations (2025)",
-       subtitle = "Miami beach",
-       caption = "2025 disorientation data provided by the Miami-Dade County
-       Parks Sea Turtle Conservation Program")
-
-north_maps <- (ha_map | gb_map) +
-  plot_annotation(title = "Sea turtle disorientations (2025)",
-    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold"))) +
-  labs(caption = "2025 disorientation data provided by the Miami-Dade County
-       Parks Sea Turtle Conservation Program")
-
-south_maps
-miamibeach_map
-north_maps
 ```
 
 # References
