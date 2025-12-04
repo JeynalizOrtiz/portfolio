@@ -148,6 +148,10 @@ MNMB : "miami beach",
 MNKB : "key biscayne",
 C0   : "miami beach"
 
+
+Review a brief discussion about the data cleaning, analysis, and visualization at:
+https://jeynalizortiz.github.io/portfolio/final_report.html
+
 Future directions: Continuation of project
 
 Include data set from property addresses in Miami Beach to compare disorientration hotspots.
