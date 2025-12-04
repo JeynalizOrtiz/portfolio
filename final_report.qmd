@@ -2,14 +2,17 @@
 title: "Final Report"
 subtitle: "EVR628 data visualization project"
 author: "Jeynaliz Ortiz Gonzalez"
+
 format:
   html:
     toc: true
+
+execute:
+  message: false
+  warning: false
+
 code-fold: true
 code-tools: true
-  execute:
-  message: false
-  warnings: false
 
 ---
 
@@ -60,7 +63,7 @@ MN - Prefix for missed nest (previosuly unmarked) found by hatch. Labeled by
     
 C###RBH - Label assigned to relocated nests from the 2025 Bal Harbour 
           renourishment project area. "C" stands for *C. caretta*, followed by 
-          nest number,followed by "R" for relocation and "BH" for Bal Harbour. 
+          nest number, followed by "R" for relocation and "BH" for Bal Harbour. 
 
 NA - No hatch disorientation
           
@@ -100,8 +103,6 @@ C0   : "miami beach"
 
 The dataset was cleaned by renaming columns, correcting a GPS export error, and rounding latitude and longitude values to consistent decimal places to address differences between Trimble and Google Earth outputs, both of which are GPS methods applied in the Miami-Dade
 County Parks Sea Turtle Conservation Program data collecting. Site names were assigned based on nest codes, a date entry error was corrected, and the final cleaned dataset was saved as an RDS file for subsequent analyses.
-
-The cleaned dataset contains ```r nrow(dis2025_clean)``` total hatch-related disorientation observations.
 
 ```{r}
 #| message: false
