@@ -24,12 +24,70 @@ Haulover, and Golden Beach.
 The data used in this project has been collected by authorized sea turtle 
 personnel (permit MTP 150) from the Miami-Dade County Parks Sea Turtle 
 Conservation Program. This singular dataset pertains to all nest hatches across
-multiple survey areas during the 2025 nesting season. 
+multiple survey areas during the 2025 nesting season. All data is reported and
+therefore, belongs to the Florida Wildlife Commission and the Miami-Dade County
+Parks Sea Turtle Conservation Program.
 
 Variables included in this data:
 
 Raw data: date, nest, species, latitude, longitude, direction, disoriented
 Clean data: date, nest, latitude, longitude, direction, disoriented, sites
+
+Description: 
+
+date : Categorical. Format - mm/dd/yyyy 
+       Signifies the date in which hatch and disorientation occurred.
+
+nest : Numerical discrete. Format -
+
+MB-N-### - Miami Beach nest and assigned number
+FI-N-### - Fisher Island nest and assigned number
+HO-N-### - Haulover nest and assigned number
+KB-N-### - Key Biscayne nest and assigned number
+GB-N-### - Golden Beach nest and assigned number
+
+MN - Prefix for missed nest (previosuly unmarked) found by hatch. Labeled by 
+     month, day, beach, surveyor initials and number of missed nest per surveyor by day.
+     Ex.: MNGB1012JOG1 - Missed nest found on Golden Beach on October 12 by
+                         JOG; 1st nest found by surveyor of the day.
+    
+C###RBH - Label assigned to relocated nests from the 2025 Bal Harbour 
+          renourishment project area. "C" stands for C. caretta, followed by 
+          nest number,followed by "R" for relocation and "BH" for Bal Harbor. 
+
+NA - No hatch disorientation
+          
+species : Categorical. Format - Genus species
+
+Caretta caretta
+Chelonia mydas
+Dermochelys coriacea
+
+latitude : Numerical continuous. Written with varying decimal places.
+
+longitude : Numerical continuous. Written with varying decimal places.
+
+direction : Categorical. Cardinal direction in which the sea turtles disoriented upon
+            emergence.
+            
+disoriented : Numerical discrete. Number of sea turtles disoriented based on
+
+<10 : less than 10
+11-50 
+#>50 : over 50
+
+sites: New column. Summarizes nest ID's into their respective site names. 
+
+KB-N : "key biscayne",
+HO-N : "haulover",
+FI-N : "fisher island",
+MB-N : "miami beach",
+GB-N : "golden beach",
+MNGB : "golden beach",
+MNMB : "miami beach",
+MNKB : "key biscayne",
+C0   : "miami beach"
+
 
 # Data processing 
 
