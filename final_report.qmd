@@ -34,6 +34,8 @@ Clean data: date, nest, latitude, longitude, direction, disoriented, sites
 # Data processing 
 
 ```{r}
+#| message: false
+#| warning: false
 #Load libraries
 library(tidyverse)
 library(ggplot2)
