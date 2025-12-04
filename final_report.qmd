@@ -189,6 +189,8 @@ write_rds(
 # Main findings 
 
 ```{r}
+#| message: false
+#| warning: false
 dis2025_clean <- read_rds(file = "data/processed/disorientations2025_clean.rds")
 
 dis_per_site <- dis2025_clean |>
@@ -247,6 +249,225 @@ species_dispersite_plot <- ggplot(data = species_dispersite,
   theme(plot.title.position = "plot")
 
 species_dispersite_plot
+
+# Trying shaoefile
+
+fl_shp <- st_read("Detailed_Florida_State_Boundary/Detailed_Florida_State_Boundary.shp")
+
+
+# Make sure shapefile and points have the same CRS
+
+fl_shp <- st_transform(fl_shp, st_crs(dis2025_sf))
+
+#Key biscayne map using shapefile
+
+#Make function for maps ######################################################
+
+map <- function(data = fl_shp, x, bb, pad = 0.05, title = "title") {
+  ggplot() +
+  geom_sf(data,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = x,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(bb["xmin"] - pad,
+                      bb["xmax"] + pad),
+    ylim   = c(bb["ymin"] - pad,
+               bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "title",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+}
+
+#############################################################################
+pad <- 0.05
+
+kb_bb <- st_bbox(kb_sf)
+
+kb_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = kb_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(kb_bb["xmin"] - pad,
+                      kb_bb["xmax"] + pad),
+    ylim   = c(kb_bb["ymin"] - pad,
+               kb_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "key biscayne",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+kb_map
+
+# haulover map
+
+ha_bb <- st_bbox(ha_sf)
+
+ha_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = ha_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(ha_bb["xmin"] - pad,
+                      ha_bb["xmax"] + pad),
+    ylim   = c(ha_bb["ymin"] - pad,
+               ha_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "Haulover",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+ha_map
+
+# fisher island map
+
+fi_bb <- st_bbox(fi_sf)
+
+fi_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = fi_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(fi_bb["xmin"] - pad,
+                      fi_bb["xmax"] + pad),
+    ylim   = c(fi_bb["ymin"] - pad,
+               fi_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "Fisher island",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+fi_map
+
+# miami beach map
+
+mb_bb <- st_bbox(mb_sf)
+
+mb_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = mb_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(mb_bb["xmin"] - pad,
+                      mb_bb["xmax"] + pad),
+    ylim   = c(mb_bb["ymin"] - pad,
+               mb_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "Miami beach",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+mb_map
+
+# golden beach map
+
+gb_bb <- st_bbox(gb_sf)
+
+gb_map <- ggplot() +
+  geom_sf(data = fl_shp,
+          fill = "gray95",
+          color = "black",
+          linewidth = 0.3) +
+  geom_sf(data = gb_sf,
+          aes(color = species),
+          size = 2.5) +
+  coord_sf(xlim   = c(gb_bb["xmin"] - pad,
+                      gb_bb["xmax"] + pad),
+    ylim   = c(gb_bb["ymin"] - pad,
+               gb_bb["ymax"] + pad),
+    expand = FALSE) +
+  annotation_scale(location = "bl",
+                   width_hint = 0.25) +
+  annotation_north_arrow(location = "br",
+                         style = north_arrow_fancy_orienteering()) +
+  labs(title = "Golden beach",
+       x = "longitude",
+       y = "latitude",
+       color = "species") +
+  theme_classic()
+
+gb_map
+
+# Combining maps using patchwork - NOT FINAL FIGURE
+
+combined_maps <- (kb_map | mb_map | ha_map) /
+                 (fi_map | gb_map | plot_spacer()) +
+  plot_annotation(title = "Sea turtle disorientations (2025)",
+                  theme = theme(plot.title = element_text(hjust = 0.5,
+                                                          face = "bold")))
+
+combined_maps
+
+# For easier visuals - Added captions to final visuals
+
+south_maps <- (kb_map | fi_map) +
+  plot_annotation(title = "Sea turtle disorientations (2025)",
+    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold"))) +
+  labs(caption = "2025 disorientation data provided by the Miami-Dade County
+       Parks Sea Turtle Conservation Program")
+
+
+miamibeach_map <- (mb_map) +
+  labs(title = "Sea turtle disorientations (2025)",
+       subtitle = "Miami beach",
+       caption = "2025 disorientation data provided by the Miami-Dade County
+       Parks Sea Turtle Conservation Program")
+
+north_maps <- (ha_map | gb_map) +
+  plot_annotation(title = "Sea turtle disorientations (2025)",
+    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold"))) +
+  labs(caption = "2025 disorientation data provided by the Miami-Dade County
+       Parks Sea Turtle Conservation Program")
+
+south_maps
+miamibeach_map
+north_maps
 ```
 
 # References
