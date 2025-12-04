@@ -18,7 +18,7 @@ Haulover, and Golden Beach.
 
 # Objective(s)
 
-THe objectives of this dataset analysis is to quantify the amount of sea turtle
+The objectives of this dataset analysis is to quantify the amount of sea turtle
 hatchling disorientations per site during the timeframe of collection (nesting season, 2025).
 After quantification, map will be made using the available coordinates to see wheren they are kocated in refrence to properties. 
 
