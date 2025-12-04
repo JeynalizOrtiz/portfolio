@@ -35,10 +35,10 @@ Clean data: date, nest, latitude, longitude, direction, disoriented, sites
 
 Description: 
 
-date : Categorical. Format - mm/dd/yyyy 
+**date** : Categorical. Format - mm/dd/yyyy 
        Signifies the date in which hatch and disorientation occurred.
 
-nest : Numerical discrete. Format -
+**nest** : Numerical discrete. Format -
 
 MB-N-### - Miami Beach nest and assigned number
 FI-N-### - Fisher Island nest and assigned number
@@ -57,26 +57,26 @@ C###RBH - Label assigned to relocated nests from the 2025 Bal Harbour
 
 NA - No hatch disorientation
           
-species : Categorical. Format - Genus species
+**species** : Categorical. Format - Genus species
 
-Caretta caretta
-Chelonia mydas
-Dermochelys coriacea
+*Caretta caretta*
+*Chelonia mydas*
+*Dermochelys coriacea*
 
-latitude : Numerical continuous. Written with varying decimal places.
+**latitude** : Numerical continuous. Written with varying decimal places.
 
-longitude : Numerical continuous. Written with varying decimal places.
+**longitude** : Numerical continuous. Written with varying decimal places.
 
-direction : Categorical. Cardinal direction in which the sea turtles disoriented upon
+**direction** : Categorical. Cardinal direction in which the sea turtles disoriented upon
             emergence.
             
-disoriented : Numerical discrete. Number of sea turtles disoriented based on
+**disoriented** : Numerical discrete. Number of sea turtles disoriented based on
 
 <10 : less than 10
 11-50 
 #>50 : over 50
 
-sites: New column. Summarizes nest ID's into their respective site names. 
+**sites**: New column. Summarizes nest ID's into their respective site names. 
 
 KB-N : "key biscayne",
 HO-N : "haulover",
