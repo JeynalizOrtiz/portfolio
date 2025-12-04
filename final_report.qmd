@@ -7,6 +7,8 @@ format:
     toc: true
 execute:
   message: false
+code-fold: true
+code-tools: true
 ---
 
 # Introduction
@@ -93,6 +95,9 @@ C0   : "miami beach"
 
 
 # Data processing 
+
+The dataset was cleaned by renaming columns, correcting a GPS export error, and rounding latitude and longitude values to consistent decimal places to address differences between Trimble and Google Earth outputs, both of which are GPS methods applied in the Miami-Dade
+County Parks Sea Turtle Conservation Program data collecting. Site names were assigned based on nest codes, a date entry error was corrected, and the final cleaned dataset was saved as an RDS file for subsequent analyses.
 
 ```{r}
 #| message: false
