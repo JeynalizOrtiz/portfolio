@@ -520,13 +520,30 @@ Appelhans T, Detsch F, Reudenbach C, Woellauer S (2025). _mapview:
   <https://doi.org/10.32614/CRAN.package.mapview>, R package version
   2.11.4, <https://CRAN.R-project.org/package=mapview>.
 
+Dunnington D (2025). _ggspatial: Spatial Data Framework for ggplot2_.
+  doi:10.32614/CRAN.package.ggspatial
+  <https://doi.org/10.32614/CRAN.package.ggspatial>, R package version
+  1.1.10, <https://CRAN.R-project.org/package=ggspatial>.
+
+Firke S (2024). _janitor: Simple Tools for Examining and Cleaning
+  Dirty Data_. doi:10.32614/CRAN.package.janitor
+  <https://doi.org/10.32614/CRAN.package.janitor>, R package version
+  2.2.1, <https://CRAN.R-project.org/package=janitor>.
+
 Florida Department of Transportation. (2019). Detailed Florida state boundary.
   Retrieved December 2, 2025 from   
   https://gis-fdot.opendata.arcgis.com/datasets/fdot::detailed-florida-state-boundary/about
   
+Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy
+  with lubridate. Journal of Statistical Software, 40(3), 1-25. URL
+  https://www.jstatsoft.org/v40/i03/.
+  
 H. Wickham. ggplot2: Elegant Graphics for Data Analysis.
   Springer-Verlag New York, 2016.
-  
+
+Miami-Dade County Parks Sea Turtle Conservation Program. (2025). 2025 sea turtle nesting 
+  season disorientation dataset [Unpublished raw data]. Miami-Dade County.
+
 Pebesma, E., & Bivand, R. (2023). Spatial Data Science: With
   Applications in R. Chapman and Hall/CRC.
   https://doi.org/10.1201/9780429459016
@@ -544,4 +561,14 @@ R Core Team (2025). _R: A Language and Environment for Statistical
   Computing_. R Foundation for Statistical Computing, Vienna, Austria.
   <https://www.R-project.org/>.
   
+Villasenor-Derbez, J.C. (2025). *EVR 628: Introduction to Data Management and Visualization for   Environmental Scientists*. Department of Environmental Science and Policy, University of Miami   Rosenstiel School of Marine, Atmospheric, and Earth Science.
+  
+Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R,
+  Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller
+  E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V,
+  Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to
+  the tidyverse.” _Journal of Open Source Software_, *4*(43), 1686.
+  doi:10.21105/joss.01686 <https://doi.org/10.21105/joss.01686>.
+
+
   
