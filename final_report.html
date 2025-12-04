@@ -257,7 +257,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="main-findings" class="level1">
 <h1>Main findings</h1>
-<p>Across all surveyed sites, disorientation events and nest counts varied substantially, with Miami Beach showing the highest number of disorientations (n = 89), followed by Haulover (n = 47) and Key Biscayne (n = 30). Fisher Island had the fewest disorientations (n = 4). Species-level patterns revealed that loggerheads (<em>Caretta caretta</em>) were the dominant nesters across all beaches, particularly at Miami Beach (58 nests) and Haulover (30 nests). Green turtles (<em>Chelonia mydas</em>) contributed a smaller but consistent portion of nests at every site, while leatherback (<em>Dermochelys coriacea</em>) nesting occurred only at Golden Beach, Haulover, and Miami Beach, and in relatively low numbers. When accounting for each site’s total nesting activity, loggerheads comprised the majority of nests at most sites—for example, 75% of nests at Fisher Island and 73% at Key Biscayne—whereas greens accounted for roughly 17–40% depending on location.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -285,6 +284,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 4 key biscayne     30
 5 miami beach      89</code></pre>
 </div>
+</div>
+<p>Across all surveyed sites, disorientation events and nest counts varied substantially, with Miami Beach showing the highest number of disorientations (n = 89), followed by Haulover (n = 47) and Key Biscayne (n = 30). Fisher Island had the fewest disorientations (n = 4). Across all surveyed sites, Miami Beach exhibited the highest number of disorientation events (89), followed by Haulover (47) and Key Biscayne (30). Green turtles (<em>Chelonia mydas</em>) contributed a smaller but consistent portion of nests at every site, while leatherback (<em>Dermochelys coriacea</em>) nesting occurred only at Golden Beach, Haulover, and Miami Beach, and in relatively low numbers. When accounting for each site’s total nesting activity, loggerheads comprised the majority of nests at most sites—for example, 75% of nests at Fisher Island and 73% at Key Biscayne—whereas greens accounted for roughly 17–40% depending on location.</p>
+<div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dis_per_site_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> dis_per_site,</span>
@@ -307,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="final_report_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="final_report_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -390,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="final_report_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="final_report_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -490,7 +492,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="final_report_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="final_report_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -528,7 +530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="final_report_files/figure-html/unnamed-chunk-2-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="final_report_files/figure-html/unnamed-chunk-3-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -566,7 +568,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="final_report_files/figure-html/unnamed-chunk-2-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="final_report_files/figure-html/unnamed-chunk-3-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -604,7 +606,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="final_report_files/figure-html/unnamed-chunk-2-6.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="final_report_files/figure-html/unnamed-chunk-3-6.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -642,7 +644,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="final_report_files/figure-html/unnamed-chunk-2-7.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="final_report_files/figure-html/unnamed-chunk-3-7.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1317,318 +1319,320 @@ https://gis-fdot.opendata.arcgis.com/datasets/fdot::detailed-florida-state-bound
 <span id="cb17-203"><a href="#cb17-203" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-204"><a href="#cb17-204" aria-hidden="true" tabindex="-1"></a><span class="fu"># Main findings </span></span>
 <span id="cb17-205"><a href="#cb17-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-206"><a href="#cb17-206" aria-hidden="true" tabindex="-1"></a>Across all surveyed sites, disorientation events and nest counts varied substantially, with Miami Beach showing the highest number of disorientations (n = 89), followed by Haulover (n = 47) and Key Biscayne (n = 30). Fisher Island had the fewest disorientations (n = 4). Species-level patterns revealed that loggerheads (*Caretta caretta*) were the dominant nesters across all beaches, particularly at Miami Beach (58 nests) and Haulover (30 nests). Green turtles (*Chelonia mydas*) contributed a smaller but consistent portion of nests at every site, while leatherback (*Dermochelys coriacea*) nesting occurred only at Golden Beach, Haulover, and Miami Beach, and in relatively low numbers. When accounting for each site’s total nesting activity, loggerheads comprised the majority of nests at most sites—for example, 75% of nests at Fisher Island and 73% at Key Biscayne—whereas greens accounted for roughly 17–40% depending on location.</span>
-<span id="cb17-207"><a href="#cb17-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-210"><a href="#cb17-210" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-211"><a href="#cb17-211" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb17-212"><a href="#cb17-212" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb17-213"><a href="#cb17-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-214"><a href="#cb17-214" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library</span></span>
-<span id="cb17-215"><a href="#cb17-215" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb17-216"><a href="#cb17-216" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggspatial)</span>
-<span id="cb17-217"><a href="#cb17-217" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb17-218"><a href="#cb17-218" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb17-208"><a href="#cb17-208" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-209"><a href="#cb17-209" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb17-210"><a href="#cb17-210" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb17-211"><a href="#cb17-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-212"><a href="#cb17-212" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library</span></span>
+<span id="cb17-213"><a href="#cb17-213" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb17-214"><a href="#cb17-214" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb17-215"><a href="#cb17-215" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb17-216"><a href="#cb17-216" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb17-217"><a href="#cb17-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-218"><a href="#cb17-218" aria-hidden="true" tabindex="-1"></a>dis2025_clean <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="at">file =</span> <span class="st">"data/processed/disorientations2025_clean.rds"</span>)</span>
 <span id="cb17-219"><a href="#cb17-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-220"><a href="#cb17-220" aria-hidden="true" tabindex="-1"></a>dis2025_clean <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="at">file =</span> <span class="st">"data/processed/disorientations2025_clean.rds"</span>)</span>
-<span id="cb17-221"><a href="#cb17-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-222"><a href="#cb17-222" aria-hidden="true" tabindex="-1"></a>dis_per_site <span class="ot">&lt;-</span> dis2025_clean <span class="sc">|&gt;</span></span>
-<span id="cb17-223"><a href="#cb17-223" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(sites) <span class="sc">|&gt;</span></span>
-<span id="cb17-224"><a href="#cb17-224" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarize</span>(<span class="at">nests =</span> <span class="fu">n_distinct</span>(nest))</span>
-<span id="cb17-225"><a href="#cb17-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-226"><a href="#cb17-226" aria-hidden="true" tabindex="-1"></a>dis_per_site</span>
-<span id="cb17-227"><a href="#cb17-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-228"><a href="#cb17-228" aria-hidden="true" tabindex="-1"></a>dis_per_site_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> dis_per_site,</span>
-<span id="cb17-229"><a href="#cb17-229" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">aes</span>(<span class="at">x =</span> sites,</span>
-<span id="cb17-230"><a href="#cb17-230" aria-hidden="true" tabindex="-1"></a>                                <span class="at">y =</span> nests)) <span class="sc">+</span></span>
-<span id="cb17-231"><a href="#cb17-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue1"</span>) <span class="sc">+</span></span>
-<span id="cb17-232"><a href="#cb17-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb17-233"><a href="#cb17-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Disorientation count by site"</span>,</span>
-<span id="cb17-234"><a href="#cb17-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Site"</span>,</span>
-<span id="cb17-235"><a href="#cb17-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Disorientation count"</span>,</span>
-<span id="cb17-236"><a href="#cb17-236" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Nest count"</span>,</span>
-<span id="cb17-237"><a href="#cb17-237" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: Miami-Dade County Parks Sea Turtle Conservation Program (2025)"</span>) <span class="sc">+</span></span>
-<span id="cb17-238"><a href="#cb17-238" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb17-239"><a href="#cb17-239" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb17-240"><a href="#cb17-240" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb17-241"><a href="#cb17-241" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="fl">0.75</span>))</span>
-<span id="cb17-242"><a href="#cb17-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-243"><a href="#cb17-243" aria-hidden="true" tabindex="-1"></a>dis_per_site_plot</span>
-<span id="cb17-244"><a href="#cb17-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-245"><a href="#cb17-245" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating a heat map that demonstrates nest per site while simultaneously comparing</span></span>
-<span id="cb17-246"><a href="#cb17-246" aria-hidden="true" tabindex="-1"></a><span class="co">#sea turtle species. Find original species_dispersite on Analysis.R file.</span></span>
-<span id="cb17-247"><a href="#cb17-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-248"><a href="#cb17-248" aria-hidden="true" tabindex="-1"></a>species_summary <span class="ot">&lt;-</span> dis2025_clean <span class="sc">|&gt;</span></span>
-<span id="cb17-249"><a href="#cb17-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sites,</span>
-<span id="cb17-250"><a href="#cb17-250" aria-hidden="true" tabindex="-1"></a>           species) <span class="sc">|&gt;</span></span>
-<span id="cb17-251"><a href="#cb17-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">nests =</span> <span class="fu">n_distinct</span>(nest), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
-<span id="cb17-252"><a href="#cb17-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-253"><a href="#cb17-253" aria-hidden="true" tabindex="-1"></a>species_summary</span>
-<span id="cb17-254"><a href="#cb17-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-255"><a href="#cb17-255" aria-hidden="true" tabindex="-1"></a>species_dispersite <span class="ot">&lt;-</span> species_summary <span class="sc">|&gt;</span></span>
-<span id="cb17-256"><a href="#cb17-256" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(dis_per_site,</span>
-<span id="cb17-257"><a href="#cb17-257" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="st">"sites"</span>,</span>
-<span id="cb17-258"><a href="#cb17-258" aria-hidden="true" tabindex="-1"></a>            <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">"_species"</span>, <span class="st">"_total"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb17-259"><a href="#cb17-259" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> <span class="fu">round</span>((nests_species <span class="sc">/</span> nests_total) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>))</span>
-<span id="cb17-260"><a href="#cb17-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-261"><a href="#cb17-261" aria-hidden="true" tabindex="-1"></a>species_dispersite</span>
-<span id="cb17-262"><a href="#cb17-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-263"><a href="#cb17-263" aria-hidden="true" tabindex="-1"></a>species_dispersite_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> species_dispersite,</span>
-<span id="cb17-264"><a href="#cb17-264" aria-hidden="true" tabindex="-1"></a>                                  <span class="fu">aes</span>(<span class="at">x =</span> sites,</span>
-<span id="cb17-265"><a href="#cb17-265" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">y =</span> species,</span>
-<span id="cb17-266"><a href="#cb17-266" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">fill =</span> nests_species)) <span class="sc">+</span></span>
-<span id="cb17-267"><a href="#cb17-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb17-268"><a href="#cb17-268" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Heat map of nests by site and species"</span>,</span>
-<span id="cb17-269"><a href="#cb17-269" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Cell values represent nest counts (n)"</span>,</span>
-<span id="cb17-270"><a href="#cb17-270" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Site"</span>,</span>
-<span id="cb17-271"><a href="#cb17-271" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Species"</span>,</span>
-<span id="cb17-272"><a href="#cb17-272" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: Miami-Dade Sea Turtle Conservation Program (2025)"</span>,</span>
-<span id="cb17-273"><a href="#cb17-273" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Nest Count"</span>) <span class="sc">+</span></span>
-<span id="cb17-274"><a href="#cb17-274" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb17-275"><a href="#cb17-275" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title.position =</span> <span class="st">"plot"</span>)</span>
-<span id="cb17-276"><a href="#cb17-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-277"><a href="#cb17-277" aria-hidden="true" tabindex="-1"></a>species_dispersite_plot</span>
-<span id="cb17-278"><a href="#cb17-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-279"><a href="#cb17-279" aria-hidden="true" tabindex="-1"></a><span class="co"># Trying shapefile</span></span>
+<span id="cb17-220"><a href="#cb17-220" aria-hidden="true" tabindex="-1"></a>dis_per_site <span class="ot">&lt;-</span> dis2025_clean <span class="sc">|&gt;</span></span>
+<span id="cb17-221"><a href="#cb17-221" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(sites) <span class="sc">|&gt;</span></span>
+<span id="cb17-222"><a href="#cb17-222" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarize</span>(<span class="at">nests =</span> <span class="fu">n_distinct</span>(nest))</span>
+<span id="cb17-223"><a href="#cb17-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-224"><a href="#cb17-224" aria-hidden="true" tabindex="-1"></a>dis_per_site</span>
+<span id="cb17-225"><a href="#cb17-225" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-226"><a href="#cb17-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-227"><a href="#cb17-227" aria-hidden="true" tabindex="-1"></a>Across all surveyed sites, disorientation events and nest counts varied substantially, with Miami Beach showing the highest number of disorientations (n = 89), followed by Haulover (n = 47) and Key Biscayne (n = 30). Fisher Island had the fewest disorientations (n = 4). Across all surveyed sites, Miami Beach exhibited the highest number of disorientation events (<span class="in">`r dis_per_site$nests[dis_per_site$sites=="miami beach"]`</span>), followed by Haulover (<span class="in">`r dis_per_site$nests[dis_per_site$sites=="haulover"]`</span>) and Key Biscayne (<span class="in">`r dis_per_site$nests[dis_per_site$sites=="key biscayne"]`</span>). Green turtles (*Chelonia mydas*) contributed a smaller but consistent portion of nests at every site, while leatherback (*Dermochelys coriacea*) nesting occurred only at Golden Beach, Haulover, and Miami Beach, and in relatively low numbers. When accounting for each site’s total nesting activity, loggerheads comprised the majority of nests at most sites—for example, 75% of nests at Fisher Island and 73% at Key Biscayne—whereas greens accounted for roughly 17–40% depending on location.</span>
+<span id="cb17-228"><a href="#cb17-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-231"><a href="#cb17-231" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-232"><a href="#cb17-232" aria-hidden="true" tabindex="-1"></a>dis_per_site_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> dis_per_site,</span>
+<span id="cb17-233"><a href="#cb17-233" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">aes</span>(<span class="at">x =</span> sites,</span>
+<span id="cb17-234"><a href="#cb17-234" aria-hidden="true" tabindex="-1"></a>                                <span class="at">y =</span> nests)) <span class="sc">+</span></span>
+<span id="cb17-235"><a href="#cb17-235" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue1"</span>) <span class="sc">+</span></span>
+<span id="cb17-236"><a href="#cb17-236" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-237"><a href="#cb17-237" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Disorientation count by site"</span>,</span>
+<span id="cb17-238"><a href="#cb17-238" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Site"</span>,</span>
+<span id="cb17-239"><a href="#cb17-239" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Disorientation count"</span>,</span>
+<span id="cb17-240"><a href="#cb17-240" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Nest count"</span>,</span>
+<span id="cb17-241"><a href="#cb17-241" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: Miami-Dade County Parks Sea Turtle Conservation Program (2025)"</span>) <span class="sc">+</span></span>
+<span id="cb17-242"><a href="#cb17-242" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb17-243"><a href="#cb17-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb17-244"><a href="#cb17-244" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb17-245"><a href="#cb17-245" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="fl">0.75</span>))</span>
+<span id="cb17-246"><a href="#cb17-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-247"><a href="#cb17-247" aria-hidden="true" tabindex="-1"></a>dis_per_site_plot</span>
+<span id="cb17-248"><a href="#cb17-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-249"><a href="#cb17-249" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating a heat map that demonstrates nest per site while simultaneously comparing</span></span>
+<span id="cb17-250"><a href="#cb17-250" aria-hidden="true" tabindex="-1"></a><span class="co">#sea turtle species. Find original species_dispersite on Analysis.R file.</span></span>
+<span id="cb17-251"><a href="#cb17-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-252"><a href="#cb17-252" aria-hidden="true" tabindex="-1"></a>species_summary <span class="ot">&lt;-</span> dis2025_clean <span class="sc">|&gt;</span></span>
+<span id="cb17-253"><a href="#cb17-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sites,</span>
+<span id="cb17-254"><a href="#cb17-254" aria-hidden="true" tabindex="-1"></a>           species) <span class="sc">|&gt;</span></span>
+<span id="cb17-255"><a href="#cb17-255" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">nests =</span> <span class="fu">n_distinct</span>(nest), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb17-256"><a href="#cb17-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-257"><a href="#cb17-257" aria-hidden="true" tabindex="-1"></a>species_summary</span>
+<span id="cb17-258"><a href="#cb17-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-259"><a href="#cb17-259" aria-hidden="true" tabindex="-1"></a>species_dispersite <span class="ot">&lt;-</span> species_summary <span class="sc">|&gt;</span></span>
+<span id="cb17-260"><a href="#cb17-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(dis_per_site,</span>
+<span id="cb17-261"><a href="#cb17-261" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="st">"sites"</span>,</span>
+<span id="cb17-262"><a href="#cb17-262" aria-hidden="true" tabindex="-1"></a>            <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">"_species"</span>, <span class="st">"_total"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb17-263"><a href="#cb17-263" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> <span class="fu">round</span>((nests_species <span class="sc">/</span> nests_total) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>))</span>
+<span id="cb17-264"><a href="#cb17-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-265"><a href="#cb17-265" aria-hidden="true" tabindex="-1"></a>species_dispersite</span>
+<span id="cb17-266"><a href="#cb17-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-267"><a href="#cb17-267" aria-hidden="true" tabindex="-1"></a>species_dispersite_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> species_dispersite,</span>
+<span id="cb17-268"><a href="#cb17-268" aria-hidden="true" tabindex="-1"></a>                                  <span class="fu">aes</span>(<span class="at">x =</span> sites,</span>
+<span id="cb17-269"><a href="#cb17-269" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">y =</span> species,</span>
+<span id="cb17-270"><a href="#cb17-270" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">fill =</span> nests_species)) <span class="sc">+</span></span>
+<span id="cb17-271"><a href="#cb17-271" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb17-272"><a href="#cb17-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Heat map of nests by site and species"</span>,</span>
+<span id="cb17-273"><a href="#cb17-273" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Cell values represent nest counts (n)"</span>,</span>
+<span id="cb17-274"><a href="#cb17-274" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Site"</span>,</span>
+<span id="cb17-275"><a href="#cb17-275" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Species"</span>,</span>
+<span id="cb17-276"><a href="#cb17-276" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: Miami-Dade Sea Turtle Conservation Program (2025)"</span>,</span>
+<span id="cb17-277"><a href="#cb17-277" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Nest Count"</span>) <span class="sc">+</span></span>
+<span id="cb17-278"><a href="#cb17-278" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb17-279"><a href="#cb17-279" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title.position =</span> <span class="st">"plot"</span>)</span>
 <span id="cb17-280"><a href="#cb17-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-281"><a href="#cb17-281" aria-hidden="true" tabindex="-1"></a>fl_shp <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"Detailed_Florida_State_Boundary/Detailed_Florida_State_Boundary.shp"</span>,</span>
-<span id="cb17-282"><a href="#cb17-282" aria-hidden="true" tabindex="-1"></a>                  <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb17-283"><a href="#cb17-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-284"><a href="#cb17-284" aria-hidden="true" tabindex="-1"></a><span class="co">#Converting data to spatial data. Creates a new geometry column</span></span>
-<span id="cb17-285"><a href="#cb17-285" aria-hidden="true" tabindex="-1"></a>dis2025_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(dis2025_clean,</span>
-<span id="cb17-286"><a href="#cb17-286" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"longitude"</span>, <span class="st">"latitude"</span>),</span>
-<span id="cb17-287"><a href="#cb17-287" aria-hidden="true" tabindex="-1"></a>  <span class="at">crs    =</span> <span class="dv">4326</span>,</span>
-<span id="cb17-288"><a href="#cb17-288" aria-hidden="true" tabindex="-1"></a>  <span class="at">remove =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb17-289"><a href="#cb17-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-290"><a href="#cb17-290" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter by site to start building maps by using patchwork</span></span>
-<span id="cb17-291"><a href="#cb17-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-292"><a href="#cb17-292" aria-hidden="true" tabindex="-1"></a>kb_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
-<span id="cb17-293"><a href="#cb17-293" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"key biscayne"</span>)</span>
-<span id="cb17-294"><a href="#cb17-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-295"><a href="#cb17-295" aria-hidden="true" tabindex="-1"></a>mb_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
-<span id="cb17-296"><a href="#cb17-296" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"miami beach"</span>)</span>
-<span id="cb17-297"><a href="#cb17-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-298"><a href="#cb17-298" aria-hidden="true" tabindex="-1"></a>ha_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
-<span id="cb17-299"><a href="#cb17-299" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"haulover"</span>)</span>
-<span id="cb17-300"><a href="#cb17-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-301"><a href="#cb17-301" aria-hidden="true" tabindex="-1"></a>fi_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
-<span id="cb17-302"><a href="#cb17-302" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"fisher island"</span>)</span>
-<span id="cb17-303"><a href="#cb17-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-304"><a href="#cb17-304" aria-hidden="true" tabindex="-1"></a>gb_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
-<span id="cb17-305"><a href="#cb17-305" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"golden beach"</span>)</span>
-<span id="cb17-306"><a href="#cb17-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-307"><a href="#cb17-307" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure shapefile and points have the same CRS</span></span>
-<span id="cb17-308"><a href="#cb17-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-309"><a href="#cb17-309" aria-hidden="true" tabindex="-1"></a>fl_shp <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(fl_shp, <span class="fu">st_crs</span>(dis2025_sf))</span>
+<span id="cb17-281"><a href="#cb17-281" aria-hidden="true" tabindex="-1"></a>species_dispersite_plot</span>
+<span id="cb17-282"><a href="#cb17-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-283"><a href="#cb17-283" aria-hidden="true" tabindex="-1"></a><span class="co"># Trying shapefile</span></span>
+<span id="cb17-284"><a href="#cb17-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-285"><a href="#cb17-285" aria-hidden="true" tabindex="-1"></a>fl_shp <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"Detailed_Florida_State_Boundary/Detailed_Florida_State_Boundary.shp"</span>,</span>
+<span id="cb17-286"><a href="#cb17-286" aria-hidden="true" tabindex="-1"></a>                  <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-287"><a href="#cb17-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-288"><a href="#cb17-288" aria-hidden="true" tabindex="-1"></a><span class="co">#Converting data to spatial data. Creates a new geometry column</span></span>
+<span id="cb17-289"><a href="#cb17-289" aria-hidden="true" tabindex="-1"></a>dis2025_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(dis2025_clean,</span>
+<span id="cb17-290"><a href="#cb17-290" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"longitude"</span>, <span class="st">"latitude"</span>),</span>
+<span id="cb17-291"><a href="#cb17-291" aria-hidden="true" tabindex="-1"></a>  <span class="at">crs    =</span> <span class="dv">4326</span>,</span>
+<span id="cb17-292"><a href="#cb17-292" aria-hidden="true" tabindex="-1"></a>  <span class="at">remove =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-293"><a href="#cb17-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-294"><a href="#cb17-294" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter by site to start building maps by using patchwork</span></span>
+<span id="cb17-295"><a href="#cb17-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-296"><a href="#cb17-296" aria-hidden="true" tabindex="-1"></a>kb_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
+<span id="cb17-297"><a href="#cb17-297" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"key biscayne"</span>)</span>
+<span id="cb17-298"><a href="#cb17-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-299"><a href="#cb17-299" aria-hidden="true" tabindex="-1"></a>mb_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
+<span id="cb17-300"><a href="#cb17-300" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"miami beach"</span>)</span>
+<span id="cb17-301"><a href="#cb17-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-302"><a href="#cb17-302" aria-hidden="true" tabindex="-1"></a>ha_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
+<span id="cb17-303"><a href="#cb17-303" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"haulover"</span>)</span>
+<span id="cb17-304"><a href="#cb17-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-305"><a href="#cb17-305" aria-hidden="true" tabindex="-1"></a>fi_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
+<span id="cb17-306"><a href="#cb17-306" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"fisher island"</span>)</span>
+<span id="cb17-307"><a href="#cb17-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-308"><a href="#cb17-308" aria-hidden="true" tabindex="-1"></a>gb_sf <span class="ot">&lt;-</span> dis2025_sf <span class="sc">|&gt;</span></span>
+<span id="cb17-309"><a href="#cb17-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sites <span class="sc">==</span> <span class="st">"golden beach"</span>)</span>
 <span id="cb17-310"><a href="#cb17-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-311"><a href="#cb17-311" aria-hidden="true" tabindex="-1"></a><span class="co">#Key biscayne map using shapefile</span></span>
+<span id="cb17-311"><a href="#cb17-311" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure shapefile and points have the same CRS</span></span>
 <span id="cb17-312"><a href="#cb17-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-313"><a href="#cb17-313" aria-hidden="true" tabindex="-1"></a><span class="co">#Make function for maps ######################################################</span></span>
+<span id="cb17-313"><a href="#cb17-313" aria-hidden="true" tabindex="-1"></a>fl_shp <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(fl_shp, <span class="fu">st_crs</span>(dis2025_sf))</span>
 <span id="cb17-314"><a href="#cb17-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-315"><a href="#cb17-315" aria-hidden="true" tabindex="-1"></a>map <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">data =</span> fl_shp, x, bb, <span class="at">pad =</span> <span class="fl">0.05</span>, <span class="at">title =</span> <span class="st">"title"</span>) {</span>
-<span id="cb17-316"><a href="#cb17-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb17-317"><a href="#cb17-317" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(data,</span>
-<span id="cb17-318"><a href="#cb17-318" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
-<span id="cb17-319"><a href="#cb17-319" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb17-320"><a href="#cb17-320" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb17-321"><a href="#cb17-321" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> x,</span>
-<span id="cb17-322"><a href="#cb17-322" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
-<span id="cb17-323"><a href="#cb17-323" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb17-324"><a href="#cb17-324" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-325"><a href="#cb17-325" aria-hidden="true" tabindex="-1"></a>                      bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-326"><a href="#cb17-326" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-327"><a href="#cb17-327" aria-hidden="true" tabindex="-1"></a>               bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-328"><a href="#cb17-328" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb17-329"><a href="#cb17-329" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
-<span id="cb17-330"><a href="#cb17-330" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb17-331"><a href="#cb17-331" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
-<span id="cb17-332"><a href="#cb17-332" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
-<span id="cb17-333"><a href="#cb17-333" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"title"</span>,</span>
-<span id="cb17-334"><a href="#cb17-334" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
-<span id="cb17-335"><a href="#cb17-335" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
-<span id="cb17-336"><a href="#cb17-336" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
-<span id="cb17-337"><a href="#cb17-337" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb17-338"><a href="#cb17-338" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb17-339"><a href="#cb17-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-340"><a href="#cb17-340" aria-hidden="true" tabindex="-1"></a><span class="do">#############################################################################</span></span>
-<span id="cb17-341"><a href="#cb17-341" aria-hidden="true" tabindex="-1"></a>pad <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb17-342"><a href="#cb17-342" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-343"><a href="#cb17-343" aria-hidden="true" tabindex="-1"></a>kb_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(kb_sf)</span>
-<span id="cb17-344"><a href="#cb17-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-345"><a href="#cb17-345" aria-hidden="true" tabindex="-1"></a>kb_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb17-346"><a href="#cb17-346" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
-<span id="cb17-347"><a href="#cb17-347" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
-<span id="cb17-348"><a href="#cb17-348" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb17-349"><a href="#cb17-349" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb17-350"><a href="#cb17-350" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> kb_sf,</span>
-<span id="cb17-351"><a href="#cb17-351" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
-<span id="cb17-352"><a href="#cb17-352" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb17-353"><a href="#cb17-353" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(kb_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-354"><a href="#cb17-354" aria-hidden="true" tabindex="-1"></a>                      kb_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-355"><a href="#cb17-355" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(kb_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-356"><a href="#cb17-356" aria-hidden="true" tabindex="-1"></a>               kb_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-357"><a href="#cb17-357" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb17-358"><a href="#cb17-358" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
-<span id="cb17-359"><a href="#cb17-359" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb17-360"><a href="#cb17-360" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
-<span id="cb17-361"><a href="#cb17-361" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
-<span id="cb17-362"><a href="#cb17-362" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"key biscayne"</span>,</span>
-<span id="cb17-363"><a href="#cb17-363" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
-<span id="cb17-364"><a href="#cb17-364" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
-<span id="cb17-365"><a href="#cb17-365" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
-<span id="cb17-366"><a href="#cb17-366" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb17-367"><a href="#cb17-367" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-368"><a href="#cb17-368" aria-hidden="true" tabindex="-1"></a>kb_map</span>
-<span id="cb17-369"><a href="#cb17-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-370"><a href="#cb17-370" aria-hidden="true" tabindex="-1"></a><span class="co"># haulover map</span></span>
+<span id="cb17-315"><a href="#cb17-315" aria-hidden="true" tabindex="-1"></a><span class="co">#Key biscayne map using shapefile</span></span>
+<span id="cb17-316"><a href="#cb17-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-317"><a href="#cb17-317" aria-hidden="true" tabindex="-1"></a><span class="co">#Make function for maps ######################################################</span></span>
+<span id="cb17-318"><a href="#cb17-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-319"><a href="#cb17-319" aria-hidden="true" tabindex="-1"></a>map <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">data =</span> fl_shp, x, bb, <span class="at">pad =</span> <span class="fl">0.05</span>, <span class="at">title =</span> <span class="st">"title"</span>) {</span>
+<span id="cb17-320"><a href="#cb17-320" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb17-321"><a href="#cb17-321" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(data,</span>
+<span id="cb17-322"><a href="#cb17-322" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
+<span id="cb17-323"><a href="#cb17-323" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb17-324"><a href="#cb17-324" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-325"><a href="#cb17-325" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> x,</span>
+<span id="cb17-326"><a href="#cb17-326" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb17-327"><a href="#cb17-327" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb17-328"><a href="#cb17-328" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-329"><a href="#cb17-329" aria-hidden="true" tabindex="-1"></a>                      bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-330"><a href="#cb17-330" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-331"><a href="#cb17-331" aria-hidden="true" tabindex="-1"></a>               bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-332"><a href="#cb17-332" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb17-333"><a href="#cb17-333" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
+<span id="cb17-334"><a href="#cb17-334" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb17-335"><a href="#cb17-335" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
+<span id="cb17-336"><a href="#cb17-336" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
+<span id="cb17-337"><a href="#cb17-337" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"title"</span>,</span>
+<span id="cb17-338"><a href="#cb17-338" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
+<span id="cb17-339"><a href="#cb17-339" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
+<span id="cb17-340"><a href="#cb17-340" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
+<span id="cb17-341"><a href="#cb17-341" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb17-342"><a href="#cb17-342" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-343"><a href="#cb17-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-344"><a href="#cb17-344" aria-hidden="true" tabindex="-1"></a><span class="do">#############################################################################</span></span>
+<span id="cb17-345"><a href="#cb17-345" aria-hidden="true" tabindex="-1"></a>pad <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb17-346"><a href="#cb17-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-347"><a href="#cb17-347" aria-hidden="true" tabindex="-1"></a>kb_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(kb_sf)</span>
+<span id="cb17-348"><a href="#cb17-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-349"><a href="#cb17-349" aria-hidden="true" tabindex="-1"></a>kb_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb17-350"><a href="#cb17-350" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
+<span id="cb17-351"><a href="#cb17-351" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
+<span id="cb17-352"><a href="#cb17-352" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb17-353"><a href="#cb17-353" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-354"><a href="#cb17-354" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> kb_sf,</span>
+<span id="cb17-355"><a href="#cb17-355" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb17-356"><a href="#cb17-356" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb17-357"><a href="#cb17-357" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(kb_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-358"><a href="#cb17-358" aria-hidden="true" tabindex="-1"></a>                      kb_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-359"><a href="#cb17-359" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(kb_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-360"><a href="#cb17-360" aria-hidden="true" tabindex="-1"></a>               kb_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-361"><a href="#cb17-361" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb17-362"><a href="#cb17-362" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
+<span id="cb17-363"><a href="#cb17-363" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb17-364"><a href="#cb17-364" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
+<span id="cb17-365"><a href="#cb17-365" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
+<span id="cb17-366"><a href="#cb17-366" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"key biscayne"</span>,</span>
+<span id="cb17-367"><a href="#cb17-367" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
+<span id="cb17-368"><a href="#cb17-368" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
+<span id="cb17-369"><a href="#cb17-369" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
+<span id="cb17-370"><a href="#cb17-370" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb17-371"><a href="#cb17-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-372"><a href="#cb17-372" aria-hidden="true" tabindex="-1"></a>ha_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(ha_sf)</span>
+<span id="cb17-372"><a href="#cb17-372" aria-hidden="true" tabindex="-1"></a>kb_map</span>
 <span id="cb17-373"><a href="#cb17-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-374"><a href="#cb17-374" aria-hidden="true" tabindex="-1"></a>ha_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb17-375"><a href="#cb17-375" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
-<span id="cb17-376"><a href="#cb17-376" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
-<span id="cb17-377"><a href="#cb17-377" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb17-378"><a href="#cb17-378" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb17-379"><a href="#cb17-379" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ha_sf,</span>
-<span id="cb17-380"><a href="#cb17-380" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
-<span id="cb17-381"><a href="#cb17-381" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb17-382"><a href="#cb17-382" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(ha_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-383"><a href="#cb17-383" aria-hidden="true" tabindex="-1"></a>                      ha_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-384"><a href="#cb17-384" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(ha_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-385"><a href="#cb17-385" aria-hidden="true" tabindex="-1"></a>               ha_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-386"><a href="#cb17-386" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb17-387"><a href="#cb17-387" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
-<span id="cb17-388"><a href="#cb17-388" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb17-389"><a href="#cb17-389" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
-<span id="cb17-390"><a href="#cb17-390" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
-<span id="cb17-391"><a href="#cb17-391" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Haulover"</span>,</span>
-<span id="cb17-392"><a href="#cb17-392" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
-<span id="cb17-393"><a href="#cb17-393" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
-<span id="cb17-394"><a href="#cb17-394" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
-<span id="cb17-395"><a href="#cb17-395" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb17-396"><a href="#cb17-396" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-397"><a href="#cb17-397" aria-hidden="true" tabindex="-1"></a>ha_map</span>
-<span id="cb17-398"><a href="#cb17-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-399"><a href="#cb17-399" aria-hidden="true" tabindex="-1"></a><span class="co"># fisher island map</span></span>
+<span id="cb17-374"><a href="#cb17-374" aria-hidden="true" tabindex="-1"></a><span class="co"># haulover map</span></span>
+<span id="cb17-375"><a href="#cb17-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-376"><a href="#cb17-376" aria-hidden="true" tabindex="-1"></a>ha_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(ha_sf)</span>
+<span id="cb17-377"><a href="#cb17-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-378"><a href="#cb17-378" aria-hidden="true" tabindex="-1"></a>ha_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb17-379"><a href="#cb17-379" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
+<span id="cb17-380"><a href="#cb17-380" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
+<span id="cb17-381"><a href="#cb17-381" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb17-382"><a href="#cb17-382" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-383"><a href="#cb17-383" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ha_sf,</span>
+<span id="cb17-384"><a href="#cb17-384" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb17-385"><a href="#cb17-385" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb17-386"><a href="#cb17-386" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(ha_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-387"><a href="#cb17-387" aria-hidden="true" tabindex="-1"></a>                      ha_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-388"><a href="#cb17-388" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(ha_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-389"><a href="#cb17-389" aria-hidden="true" tabindex="-1"></a>               ha_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-390"><a href="#cb17-390" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb17-391"><a href="#cb17-391" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
+<span id="cb17-392"><a href="#cb17-392" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb17-393"><a href="#cb17-393" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
+<span id="cb17-394"><a href="#cb17-394" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
+<span id="cb17-395"><a href="#cb17-395" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Haulover"</span>,</span>
+<span id="cb17-396"><a href="#cb17-396" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
+<span id="cb17-397"><a href="#cb17-397" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
+<span id="cb17-398"><a href="#cb17-398" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
+<span id="cb17-399"><a href="#cb17-399" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb17-400"><a href="#cb17-400" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-401"><a href="#cb17-401" aria-hidden="true" tabindex="-1"></a>fi_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(fi_sf)</span>
+<span id="cb17-401"><a href="#cb17-401" aria-hidden="true" tabindex="-1"></a>ha_map</span>
 <span id="cb17-402"><a href="#cb17-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-403"><a href="#cb17-403" aria-hidden="true" tabindex="-1"></a>fi_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb17-404"><a href="#cb17-404" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
-<span id="cb17-405"><a href="#cb17-405" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
-<span id="cb17-406"><a href="#cb17-406" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb17-407"><a href="#cb17-407" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb17-408"><a href="#cb17-408" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fi_sf,</span>
-<span id="cb17-409"><a href="#cb17-409" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
-<span id="cb17-410"><a href="#cb17-410" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb17-411"><a href="#cb17-411" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(fi_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-412"><a href="#cb17-412" aria-hidden="true" tabindex="-1"></a>                      fi_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-413"><a href="#cb17-413" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(fi_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-414"><a href="#cb17-414" aria-hidden="true" tabindex="-1"></a>               fi_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-415"><a href="#cb17-415" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb17-416"><a href="#cb17-416" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
-<span id="cb17-417"><a href="#cb17-417" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb17-418"><a href="#cb17-418" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
-<span id="cb17-419"><a href="#cb17-419" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
-<span id="cb17-420"><a href="#cb17-420" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Fisher island"</span>,</span>
-<span id="cb17-421"><a href="#cb17-421" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
-<span id="cb17-422"><a href="#cb17-422" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
-<span id="cb17-423"><a href="#cb17-423" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
-<span id="cb17-424"><a href="#cb17-424" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb17-425"><a href="#cb17-425" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-426"><a href="#cb17-426" aria-hidden="true" tabindex="-1"></a>fi_map</span>
-<span id="cb17-427"><a href="#cb17-427" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-428"><a href="#cb17-428" aria-hidden="true" tabindex="-1"></a><span class="co"># miami beach map</span></span>
+<span id="cb17-403"><a href="#cb17-403" aria-hidden="true" tabindex="-1"></a><span class="co"># fisher island map</span></span>
+<span id="cb17-404"><a href="#cb17-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-405"><a href="#cb17-405" aria-hidden="true" tabindex="-1"></a>fi_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(fi_sf)</span>
+<span id="cb17-406"><a href="#cb17-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-407"><a href="#cb17-407" aria-hidden="true" tabindex="-1"></a>fi_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb17-408"><a href="#cb17-408" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
+<span id="cb17-409"><a href="#cb17-409" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
+<span id="cb17-410"><a href="#cb17-410" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb17-411"><a href="#cb17-411" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-412"><a href="#cb17-412" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fi_sf,</span>
+<span id="cb17-413"><a href="#cb17-413" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb17-414"><a href="#cb17-414" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb17-415"><a href="#cb17-415" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(fi_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-416"><a href="#cb17-416" aria-hidden="true" tabindex="-1"></a>                      fi_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-417"><a href="#cb17-417" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(fi_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-418"><a href="#cb17-418" aria-hidden="true" tabindex="-1"></a>               fi_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-419"><a href="#cb17-419" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb17-420"><a href="#cb17-420" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
+<span id="cb17-421"><a href="#cb17-421" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb17-422"><a href="#cb17-422" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
+<span id="cb17-423"><a href="#cb17-423" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
+<span id="cb17-424"><a href="#cb17-424" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Fisher island"</span>,</span>
+<span id="cb17-425"><a href="#cb17-425" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
+<span id="cb17-426"><a href="#cb17-426" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
+<span id="cb17-427"><a href="#cb17-427" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
+<span id="cb17-428"><a href="#cb17-428" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb17-429"><a href="#cb17-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-430"><a href="#cb17-430" aria-hidden="true" tabindex="-1"></a>mb_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(mb_sf)</span>
+<span id="cb17-430"><a href="#cb17-430" aria-hidden="true" tabindex="-1"></a>fi_map</span>
 <span id="cb17-431"><a href="#cb17-431" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-432"><a href="#cb17-432" aria-hidden="true" tabindex="-1"></a>mb_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb17-433"><a href="#cb17-433" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
-<span id="cb17-434"><a href="#cb17-434" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
-<span id="cb17-435"><a href="#cb17-435" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb17-436"><a href="#cb17-436" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb17-437"><a href="#cb17-437" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mb_sf,</span>
-<span id="cb17-438"><a href="#cb17-438" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
-<span id="cb17-439"><a href="#cb17-439" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb17-440"><a href="#cb17-440" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(mb_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-441"><a href="#cb17-441" aria-hidden="true" tabindex="-1"></a>                      mb_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-442"><a href="#cb17-442" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(mb_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-443"><a href="#cb17-443" aria-hidden="true" tabindex="-1"></a>               mb_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-444"><a href="#cb17-444" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb17-445"><a href="#cb17-445" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
-<span id="cb17-446"><a href="#cb17-446" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb17-447"><a href="#cb17-447" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
-<span id="cb17-448"><a href="#cb17-448" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
-<span id="cb17-449"><a href="#cb17-449" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Miami beach"</span>,</span>
-<span id="cb17-450"><a href="#cb17-450" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
-<span id="cb17-451"><a href="#cb17-451" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
-<span id="cb17-452"><a href="#cb17-452" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
-<span id="cb17-453"><a href="#cb17-453" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb17-454"><a href="#cb17-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-455"><a href="#cb17-455" aria-hidden="true" tabindex="-1"></a>mb_map</span>
-<span id="cb17-456"><a href="#cb17-456" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-457"><a href="#cb17-457" aria-hidden="true" tabindex="-1"></a><span class="co"># golden beach map</span></span>
+<span id="cb17-432"><a href="#cb17-432" aria-hidden="true" tabindex="-1"></a><span class="co"># miami beach map</span></span>
+<span id="cb17-433"><a href="#cb17-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-434"><a href="#cb17-434" aria-hidden="true" tabindex="-1"></a>mb_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(mb_sf)</span>
+<span id="cb17-435"><a href="#cb17-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-436"><a href="#cb17-436" aria-hidden="true" tabindex="-1"></a>mb_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb17-437"><a href="#cb17-437" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
+<span id="cb17-438"><a href="#cb17-438" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
+<span id="cb17-439"><a href="#cb17-439" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb17-440"><a href="#cb17-440" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-441"><a href="#cb17-441" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mb_sf,</span>
+<span id="cb17-442"><a href="#cb17-442" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb17-443"><a href="#cb17-443" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb17-444"><a href="#cb17-444" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(mb_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-445"><a href="#cb17-445" aria-hidden="true" tabindex="-1"></a>                      mb_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-446"><a href="#cb17-446" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(mb_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-447"><a href="#cb17-447" aria-hidden="true" tabindex="-1"></a>               mb_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-448"><a href="#cb17-448" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb17-449"><a href="#cb17-449" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
+<span id="cb17-450"><a href="#cb17-450" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb17-451"><a href="#cb17-451" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
+<span id="cb17-452"><a href="#cb17-452" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
+<span id="cb17-453"><a href="#cb17-453" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Miami beach"</span>,</span>
+<span id="cb17-454"><a href="#cb17-454" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
+<span id="cb17-455"><a href="#cb17-455" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
+<span id="cb17-456"><a href="#cb17-456" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
+<span id="cb17-457"><a href="#cb17-457" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb17-458"><a href="#cb17-458" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-459"><a href="#cb17-459" aria-hidden="true" tabindex="-1"></a>gb_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(gb_sf)</span>
+<span id="cb17-459"><a href="#cb17-459" aria-hidden="true" tabindex="-1"></a>mb_map</span>
 <span id="cb17-460"><a href="#cb17-460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-461"><a href="#cb17-461" aria-hidden="true" tabindex="-1"></a>gb_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb17-462"><a href="#cb17-462" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
-<span id="cb17-463"><a href="#cb17-463" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
-<span id="cb17-464"><a href="#cb17-464" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb17-465"><a href="#cb17-465" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb17-466"><a href="#cb17-466" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> gb_sf,</span>
-<span id="cb17-467"><a href="#cb17-467" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
-<span id="cb17-468"><a href="#cb17-468" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb17-469"><a href="#cb17-469" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(gb_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-470"><a href="#cb17-470" aria-hidden="true" tabindex="-1"></a>                      gb_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-471"><a href="#cb17-471" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(gb_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
-<span id="cb17-472"><a href="#cb17-472" aria-hidden="true" tabindex="-1"></a>               gb_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
-<span id="cb17-473"><a href="#cb17-473" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb17-474"><a href="#cb17-474" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
-<span id="cb17-475"><a href="#cb17-475" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb17-476"><a href="#cb17-476" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
-<span id="cb17-477"><a href="#cb17-477" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
-<span id="cb17-478"><a href="#cb17-478" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Golden beach"</span>,</span>
-<span id="cb17-479"><a href="#cb17-479" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
-<span id="cb17-480"><a href="#cb17-480" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
-<span id="cb17-481"><a href="#cb17-481" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
-<span id="cb17-482"><a href="#cb17-482" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb17-483"><a href="#cb17-483" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-484"><a href="#cb17-484" aria-hidden="true" tabindex="-1"></a>gb_map</span>
-<span id="cb17-485"><a href="#cb17-485" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-486"><a href="#cb17-486" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-487"><a href="#cb17-487" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span>
-<span id="cb17-488"><a href="#cb17-488" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-489"><a href="#cb17-489" aria-hidden="true" tabindex="-1"></a>Appelhans T, Detsch F, Reudenbach C, Woellauer S (2025). _mapview:</span>
-<span id="cb17-490"><a href="#cb17-490" aria-hidden="true" tabindex="-1"></a>  Interactive Viewing of Spatial Data in R_.</span>
-<span id="cb17-491"><a href="#cb17-491" aria-hidden="true" tabindex="-1"></a>  doi:10.32614/CRAN.package.mapview</span>
-<span id="cb17-492"><a href="#cb17-492" aria-hidden="true" tabindex="-1"></a>  <span class="ot">&lt;https://doi.org/10.32614/CRAN.package.mapview&gt;</span>, R package version</span>
-<span id="cb17-493"><a href="#cb17-493" aria-hidden="true" tabindex="-1"></a>  2.11.4, <span class="ot">&lt;https://CRAN.R-project.org/package=mapview&gt;</span>.</span>
-<span id="cb17-494"><a href="#cb17-494" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-495"><a href="#cb17-495" aria-hidden="true" tabindex="-1"></a>Florida Department of Transportation. (2019). Detailed Florida state boundary.</span>
-<span id="cb17-496"><a href="#cb17-496" aria-hidden="true" tabindex="-1"></a>  Retrieved December 2, 2025 from   </span>
-<span id="cb17-497"><a href="#cb17-497" aria-hidden="true" tabindex="-1"></a>  https://gis-fdot.opendata.arcgis.com/datasets/fdot::detailed-florida-state-boundary/about</span>
-<span id="cb17-498"><a href="#cb17-498" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-499"><a href="#cb17-499" aria-hidden="true" tabindex="-1"></a>H. Wickham. ggplot2: Elegant Graphics for Data Analysis.</span>
-<span id="cb17-500"><a href="#cb17-500" aria-hidden="true" tabindex="-1"></a>  Springer-Verlag New York, 2016.</span>
-<span id="cb17-501"><a href="#cb17-501" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-502"><a href="#cb17-502" aria-hidden="true" tabindex="-1"></a>Pebesma, E., &amp; Bivand, R. (2023). Spatial Data Science: With</span>
-<span id="cb17-503"><a href="#cb17-503" aria-hidden="true" tabindex="-1"></a>  Applications in R. Chapman and Hall/CRC.</span>
-<span id="cb17-504"><a href="#cb17-504" aria-hidden="true" tabindex="-1"></a>  https://doi.org/10.1201/9780429459016</span>
-<span id="cb17-505"><a href="#cb17-505" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-506"><a href="#cb17-506" aria-hidden="true" tabindex="-1"></a>Pebesma, E. (2018). Simple Features for R: Standardized Support for</span>
-<span id="cb17-507"><a href="#cb17-507" aria-hidden="true" tabindex="-1"></a>  Spatial Vector Data. The R Journal 10 (1), 439-446.</span>
-<span id="cb17-508"><a href="#cb17-508" aria-hidden="true" tabindex="-1"></a>  https://doi.org/10.32614/RJ-2018-009</span>
-<span id="cb17-509"><a href="#cb17-509" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-510"><a href="#cb17-510" aria-hidden="true" tabindex="-1"></a>Pedersen T (2025). _patchwork: The Composer of Plots_.</span>
-<span id="cb17-511"><a href="#cb17-511" aria-hidden="true" tabindex="-1"></a>  doi:10.32614/CRAN.package.patchwork</span>
-<span id="cb17-512"><a href="#cb17-512" aria-hidden="true" tabindex="-1"></a>  <span class="ot">&lt;https://doi.org/10.32614/CRAN.package.patchwork&gt;</span>, R package version</span>
-<span id="cb17-513"><a href="#cb17-513" aria-hidden="true" tabindex="-1"></a>  1.3.2, <span class="ot">&lt;https://CRAN.R-project.org/package=patchwork&gt;</span>.</span>
-<span id="cb17-514"><a href="#cb17-514" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-515"><a href="#cb17-515" aria-hidden="true" tabindex="-1"></a>R Core Team (2025). _R: A Language and Environment for Statistical</span>
-<span id="cb17-516"><a href="#cb17-516" aria-hidden="true" tabindex="-1"></a>  Computing_. R Foundation for Statistical Computing, Vienna, Austria.</span>
-<span id="cb17-517"><a href="#cb17-517" aria-hidden="true" tabindex="-1"></a>  <span class="ot">&lt;https://www.R-project.org/&gt;</span>.</span>
+<span id="cb17-461"><a href="#cb17-461" aria-hidden="true" tabindex="-1"></a><span class="co"># golden beach map</span></span>
+<span id="cb17-462"><a href="#cb17-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-463"><a href="#cb17-463" aria-hidden="true" tabindex="-1"></a>gb_bb <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(gb_sf)</span>
+<span id="cb17-464"><a href="#cb17-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-465"><a href="#cb17-465" aria-hidden="true" tabindex="-1"></a>gb_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb17-466"><a href="#cb17-466" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> fl_shp,</span>
+<span id="cb17-467"><a href="#cb17-467" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"gray95"</span>,</span>
+<span id="cb17-468"><a href="#cb17-468" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb17-469"><a href="#cb17-469" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb17-470"><a href="#cb17-470" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> gb_sf,</span>
+<span id="cb17-471"><a href="#cb17-471" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb17-472"><a href="#cb17-472" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb17-473"><a href="#cb17-473" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim   =</span> <span class="fu">c</span>(gb_bb[<span class="st">"xmin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-474"><a href="#cb17-474" aria-hidden="true" tabindex="-1"></a>                      gb_bb[<span class="st">"xmax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-475"><a href="#cb17-475" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim   =</span> <span class="fu">c</span>(gb_bb[<span class="st">"ymin"</span>] <span class="sc">-</span> pad,</span>
+<span id="cb17-476"><a href="#cb17-476" aria-hidden="true" tabindex="-1"></a>               gb_bb[<span class="st">"ymax"</span>] <span class="sc">+</span> pad),</span>
+<span id="cb17-477"><a href="#cb17-477" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb17-478"><a href="#cb17-478" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_scale</span>(<span class="at">location =</span> <span class="st">"bl"</span>,</span>
+<span id="cb17-479"><a href="#cb17-479" aria-hidden="true" tabindex="-1"></a>                   <span class="at">width_hint =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb17-480"><a href="#cb17-480" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_north_arrow</span>(<span class="at">location =</span> <span class="st">"br"</span>,</span>
+<span id="cb17-481"><a href="#cb17-481" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="fu">north_arrow_fancy_orienteering</span>()) <span class="sc">+</span></span>
+<span id="cb17-482"><a href="#cb17-482" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Golden beach"</span>,</span>
+<span id="cb17-483"><a href="#cb17-483" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"longitude"</span>,</span>
+<span id="cb17-484"><a href="#cb17-484" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"latitude"</span>,</span>
+<span id="cb17-485"><a href="#cb17-485" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"species"</span>) <span class="sc">+</span></span>
+<span id="cb17-486"><a href="#cb17-486" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb17-487"><a href="#cb17-487" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-488"><a href="#cb17-488" aria-hidden="true" tabindex="-1"></a>gb_map</span>
+<span id="cb17-489"><a href="#cb17-489" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-490"><a href="#cb17-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-491"><a href="#cb17-491" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span>
+<span id="cb17-492"><a href="#cb17-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-493"><a href="#cb17-493" aria-hidden="true" tabindex="-1"></a>Appelhans T, Detsch F, Reudenbach C, Woellauer S (2025). _mapview:</span>
+<span id="cb17-494"><a href="#cb17-494" aria-hidden="true" tabindex="-1"></a>  Interactive Viewing of Spatial Data in R_.</span>
+<span id="cb17-495"><a href="#cb17-495" aria-hidden="true" tabindex="-1"></a>  doi:10.32614/CRAN.package.mapview</span>
+<span id="cb17-496"><a href="#cb17-496" aria-hidden="true" tabindex="-1"></a>  <span class="ot">&lt;https://doi.org/10.32614/CRAN.package.mapview&gt;</span>, R package version</span>
+<span id="cb17-497"><a href="#cb17-497" aria-hidden="true" tabindex="-1"></a>  2.11.4, <span class="ot">&lt;https://CRAN.R-project.org/package=mapview&gt;</span>.</span>
+<span id="cb17-498"><a href="#cb17-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-499"><a href="#cb17-499" aria-hidden="true" tabindex="-1"></a>Florida Department of Transportation. (2019). Detailed Florida state boundary.</span>
+<span id="cb17-500"><a href="#cb17-500" aria-hidden="true" tabindex="-1"></a>  Retrieved December 2, 2025 from   </span>
+<span id="cb17-501"><a href="#cb17-501" aria-hidden="true" tabindex="-1"></a>  https://gis-fdot.opendata.arcgis.com/datasets/fdot::detailed-florida-state-boundary/about</span>
+<span id="cb17-502"><a href="#cb17-502" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-503"><a href="#cb17-503" aria-hidden="true" tabindex="-1"></a>H. Wickham. ggplot2: Elegant Graphics for Data Analysis.</span>
+<span id="cb17-504"><a href="#cb17-504" aria-hidden="true" tabindex="-1"></a>  Springer-Verlag New York, 2016.</span>
+<span id="cb17-505"><a href="#cb17-505" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-506"><a href="#cb17-506" aria-hidden="true" tabindex="-1"></a>Pebesma, E., &amp; Bivand, R. (2023). Spatial Data Science: With</span>
+<span id="cb17-507"><a href="#cb17-507" aria-hidden="true" tabindex="-1"></a>  Applications in R. Chapman and Hall/CRC.</span>
+<span id="cb17-508"><a href="#cb17-508" aria-hidden="true" tabindex="-1"></a>  https://doi.org/10.1201/9780429459016</span>
+<span id="cb17-509"><a href="#cb17-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-510"><a href="#cb17-510" aria-hidden="true" tabindex="-1"></a>Pebesma, E. (2018). Simple Features for R: Standardized Support for</span>
+<span id="cb17-511"><a href="#cb17-511" aria-hidden="true" tabindex="-1"></a>  Spatial Vector Data. The R Journal 10 (1), 439-446.</span>
+<span id="cb17-512"><a href="#cb17-512" aria-hidden="true" tabindex="-1"></a>  https://doi.org/10.32614/RJ-2018-009</span>
+<span id="cb17-513"><a href="#cb17-513" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-514"><a href="#cb17-514" aria-hidden="true" tabindex="-1"></a>Pedersen T (2025). _patchwork: The Composer of Plots_.</span>
+<span id="cb17-515"><a href="#cb17-515" aria-hidden="true" tabindex="-1"></a>  doi:10.32614/CRAN.package.patchwork</span>
+<span id="cb17-516"><a href="#cb17-516" aria-hidden="true" tabindex="-1"></a>  <span class="ot">&lt;https://doi.org/10.32614/CRAN.package.patchwork&gt;</span>, R package version</span>
+<span id="cb17-517"><a href="#cb17-517" aria-hidden="true" tabindex="-1"></a>  1.3.2, <span class="ot">&lt;https://CRAN.R-project.org/package=patchwork&gt;</span>.</span>
 <span id="cb17-518"><a href="#cb17-518" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-519"><a href="#cb17-519" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-519"><a href="#cb17-519" aria-hidden="true" tabindex="-1"></a>R Core Team (2025). _R: A Language and Environment for Statistical</span>
+<span id="cb17-520"><a href="#cb17-520" aria-hidden="true" tabindex="-1"></a>  Computing_. R Foundation for Statistical Computing, Vienna, Austria.</span>
+<span id="cb17-521"><a href="#cb17-521" aria-hidden="true" tabindex="-1"></a>  <span class="ot">&lt;https://www.R-project.org/&gt;</span>.</span>
+<span id="cb17-522"><a href="#cb17-522" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-523"><a href="#cb17-523" aria-hidden="true" tabindex="-1"></a>  </span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

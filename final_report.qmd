@@ -201,8 +201,6 @@ write_rds(
 
 # Main findings 
 
-Across all surveyed sites, disorientation events and nest counts varied substantially, with Miami Beach showing the highest number of disorientations (n = 89), followed by Haulover (n = 47) and Key Biscayne (n = 30). Fisher Island had the fewest disorientations (n = 4). Species-level patterns revealed that loggerheads (*Caretta caretta*) were the dominant nesters across all beaches, particularly at Miami Beach (58 nests) and Haulover (30 nests). Green turtles (*Chelonia mydas*) contributed a smaller but consistent portion of nests at every site, while leatherback (*Dermochelys coriacea*) nesting occurred only at Golden Beach, Haulover, and Miami Beach, and in relatively low numbers. When accounting for each site’s total nesting activity, loggerheads comprised the majority of nests at most sites—for example, 75% of nests at Fisher Island and 73% at Key Biscayne—whereas greens accounted for roughly 17–40% depending on location.
-
 ```{r}
 #| message: false
 #| warning: false
@@ -220,7 +218,11 @@ dis_per_site <- dis2025_clean |>
    summarize(nests = n_distinct(nest))
 
 dis_per_site
+```
 
+Across all surveyed sites, disorientation events and nest counts varied substantially, with Miami Beach showing the highest number of disorientations (n = 89), followed by Haulover (n = 47) and Key Biscayne (n = 30). Fisher Island had the fewest disorientations (n = 4). Across all surveyed sites, Miami Beach exhibited the highest number of disorientation events (`r dis_per_site$nests[dis_per_site$sites=="miami beach"]`), followed by Haulover (`r dis_per_site$nests[dis_per_site$sites=="haulover"]`) and Key Biscayne (`r dis_per_site$nests[dis_per_site$sites=="key biscayne"]`). Green turtles (*Chelonia mydas*) contributed a smaller but consistent portion of nests at every site, while leatherback (*Dermochelys coriacea*) nesting occurred only at Golden Beach, Haulover, and Miami Beach, and in relatively low numbers. When accounting for each site’s total nesting activity, loggerheads comprised the majority of nests at most sites—for example, 75% of nests at Fisher Island and 73% at Key Biscayne—whereas greens accounted for roughly 17–40% depending on location.
+
+```{r}
 dis_per_site_plot <- ggplot(data = dis_per_site,
                             aes(x = sites,
                                 y = nests)) +
