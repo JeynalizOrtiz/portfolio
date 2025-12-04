@@ -257,9 +257,10 @@ species_dispersite_plot <- ggplot(data = species_dispersite,
 
 species_dispersite_plot
 
-# Trying shaoefile
+# Trying shapefile
 
-fl_shp <- st_read("Detailed_Florida_State_Boundary/Detailed_Florida_State_Boundary.shp")
+fl_shp <- st_read("Detailed_Florida_State_Boundary/Detailed_Florida_State_Boundary.shp",
+                  quiet = TRUE)
 
 #Converting data to spatial data. Creates a new geometry column
 dis2025_sf <- st_as_sf(dis2025_clean,
